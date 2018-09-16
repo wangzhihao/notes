@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{cleveref}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\title{Notes on Book Theory of Games and Statistical Decisions}
+\author{Zhihao hao@chopin.fm}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\section{Chapter 1}
+To read.
+
+\section{Chapter 2}
+
+\begin{lemma} \label{lem1}
+For any set $R$, the set $R^{*}$ of all points $r^{*}$ which are centers of gravity of a finite set of points in $R$ with weights, i.e., which are all representable as
+
+\begin{equation}
+ r^{*} = \lambda_{1}r_{1} + ... + \lambda_{k}r_{k}
+\end{equation}
+
+where $\lambda_i \geq 0,\quad \sum_{1}^{k}\lambda_i = 1, \quad r_i \in R, \quad i = 1 , ..., k, \quad k = 1, 2, ...,$
+
+is a convex set containing $R$.
+\end{lemma}
+
+\begin{proof}
+    Suppose we have two points $a$ and $b$ in $R^*$. as long as we can prove any $\alpha{}a + (1 -\alpha)b$ also in $R^*$, then by definition $R^*$ will be a convex set.
+
+    \begin{align*}
+        a & = \lambda_{i1}r_{i1} + ... + \lambda_{ik}r_{ik} \\
+        b & = \lambda_{j1}r_{j1} + ... + \lambda_{jk}r_{jk} \\
+        \alpha{} & a + (1 -\alpha)b = \\
+            & \alpha{}\lambda_{i1}r_{i1} + ... + \alpha{}\lambda_{ik}r_{ik} + (1 -\alpha)\lambda_{j1}r_{j1} + ... + (1 -\alpha)\lambda_{jk}r_{jk}
+    \end{align*}
+    From the equation, $\alpha{}a + (1 -\alpha)b$ is of the same representation of $r^{*}$, so it also belongs to $R^{*}$.
+
+\end{proof}
+
+\begin{proposition} \label{prop1}
+    \cref{lem1} can also be rephased as $R^*$, which is all possible convex combinations of the subset of $R$, is a convex set.
+\end{proposition}
+
+
+\begin{lemma}
+    $R^*$ is the convex hull of $R$, i.e., the minimum convex set which contains $R$.
+\end{lemma}
+
+\begin{proof}
+    Since in \cref{lem1} we've already proved that $R^*$ is a convex set, what's left is to prove the $R^*$ is the mininum one. By \cref{prop1}, we only need to prove
+    that for any convex set $C$, which contains $R$, will contain all possible convex conbinations of subject of $R$.  
+
+    Let's prove by induction. 2-way convex combinations of $R$ is in $C$, which holds by convex set definition, i.e, any $\alpha{}a + (1 -\alpha)b$ will belongs to $C$ if $a$ and $b$ belongs to $R$. If k-way convex combinations of $R$ is in $C$, then k + 1 way convex combinations of $R$ is also in $C$.
+    \begin{align*}
+        \lambda_{1}r_{1} & + ... + \lambda_{k}r_{k} + \lambda_{k+1}r_{k+1} = \\
+          = & \sum_1^k{\lambda_{i}}(\frac{\lambda_{1}r_{1} + ... + \lambda_{k}r_{k}}{\sum_1^k{\lambda_{i}}}) + \lambda_{k+1}r_{k+1} \\
+          = & \sum_1^k{\lambda_{i}} r^{*} + \lambda_{k+1}r_{k+1}
+    \end{align*}
+\end{proof}
+
+\end{document}
+
