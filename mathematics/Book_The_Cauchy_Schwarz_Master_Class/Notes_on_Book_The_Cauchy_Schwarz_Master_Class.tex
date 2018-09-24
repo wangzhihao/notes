@@ -80,7 +80,7 @@
     We can view the sum of the sequence as the inner product of vectors in $\mathbb{R}_n$: $(a_1, a_2, ..., a_n)$ and $(1, 1, ..., 1)$. Then it becomes obvious from Cauchy's inequality.
 \end{proof}
 \begin{exercise}
-    For Book Exercise 1.1. Prove 
+    For Book Exercise 1.1. Prove
 
     \begin{equation*}
         \sum_{k=1}^{n}{a_k} \leq (\sum_{k=1}^{n}{|a_k|^{2/3}})^{\frac{1}{2}} (\sum_{k=1}^{n}{|a_k|^{4/3}})^{\frac{1}{2}}
@@ -91,5 +91,62 @@
 \begin{proof}
     We can view the sum as the inner product of vectors in $\mathbb{R}_n$: $(a_1^{\frac{1}{3}}, a_2^{\frac{1}{3}}, ..., a_n^{\frac{1}{3}})$ and $(a_1^{\frac{2}{3}}, a_2^{\frac{2}{3}}, ..., a_n^{\frac{2}{3}})$. Then it becomes obvious from Cauchy's inequality.
 \end{proof}
+
+\begin{exercise}
+    For Book Exercise 1.2. Prove
+
+    \begin{equation*}
+        1 \leq \bigg\{\sum_{j = 1}^{n}{p_ja_j}\bigg\} \bigg\{\sum_{j = 1}^{n}{p_jb_j}\bigg\}
+    \end{equation*}
+
+\end{exercise}
+
+\begin{proof}
+    We can expand the multipication.
+    \begin{align*}
+        & \bigg\{\sum_{j = 1}^{n}{p_ja_j}\bigg\} \bigg\{\sum_{j = 1}^{n}{p_jb_j}\bigg\} \\
+        & = \sum_{i = 1}^{n}{p_i^2a_ib_i} + \sum_{i = 1}^{n}\sum_{j = i+1}^n{p_ip_j(a_ib_j + a_jb_i)} \\
+        & \geq \sum_{i = 1}^{n}{p_i^2} + \sum_{i = 1}^{n}\sum_{j = i+1}^n{p_ip_j(a_ib_j + a_jb_i)}
+    \end{align*}
+    Since we know by the additive bound.
+    \begin{equation*}
+        a_ib_j + a_jb_i \geq 2(a_ib_j * a_jb_i)^{\frac{1}{2}} = 2(a_ib_i * a_jb_j)^{\frac{1}{2}} \geq 2(1*1)^{\frac{1}{2}} = 2
+    \end{equation*}
+    The equation would be
+    \begin{align*}
+        & \bigg\{\sum_{j = 1}^{n}{p_ja_j}\bigg\} \bigg\{\sum_{j = 1}^{n}{p_jb_j}\bigg\} \\
+        & \geq \sum_{i = 1}^{n}{p_i^2} + \sum_{i = 1}^{n}\sum_{j = i+1}^n{p_ip_j(a_ib_j + a_jb_i)} \\
+        & \geq \sum_{i = 1}^{n}{p_i^2} + \sum_{i = 1}^{n}\sum_{j = i+1}^n{p_ip_j*2} \\
+        & = \bigg(\sum_{i = 1}^n{p_i}\bigg)^2 \\
+        & = 1
+    \end{align*}
+\end{proof}
+
+\begin{exercise}
+    For Book Exercise 1.3 (Why Not Three or More?)
+\end{exercise}
+
+\begin{proof}
+    We can apply the same trick(Cauchy's inequality) of Exercise 1 to solve Part (a).  Granted Part(a) is solved, we can solve Part(b) based on Part(a). We only need to prove the following.
+    \begin{equation*}
+        \sum_{k=1}^n{a_k^4} \leq \bigg( \sum_{k=1}^n{a_k^2} \bigg) ^2
+    \end{equation*}
+    We can just expand the polynomial on the RHS and only keep the $a_k^4$ terms, then we can easily get the inequality.
+
+    Alternatively, We can also prove Part(b) and its more general form as follows, directly by Cauchy's inequality.
+    \begin{equation*}
+        \bigg( \sum_{k=1}^ns_{1_k}s_{2_k}...s_{m_k} \bigg) ^2
+        \leq \sum_{k=1}^n{s_{1_k}^2} \sum_{k=1}^n{s_{2_k}^2} ... \sum_{k=1}^n{s_{m_k}^2}
+    \end{equation*}
+    Here is the proof.
+    \begin{align*}
+        & \bigg( \sum_{k=1}^ns_{1_k}s_{2_k}...s_{m_k} \bigg) ^2 \\
+        & = \bigg( \sum_{k=1}^n(s_{1_k}s_{2_k}...s_{{m-1}_k})*(s_{m_k}) \bigg) ^2 \\
+        & \leq \sum_{k=1}^n{(s_{1_k}s_{2_k}...s_{{m-1}_k})^2} \sum_{k=1}^n{s_{m_k}^2} & \text{by Cauchy's inequality}\\
+        & \leq \bigg( \sum_{k=1}^n{s_{1_k}^2} \sum_{k=1}^n{s_{2_k}^2} ... \sum_{k=1}^n{s_{{m-1}_k}^2} \bigg) \sum_{k=1}^n{s_{m_k}^2} & \text{by polynomial expansion}\\
+        & = \sum_{k=1}^n{s_{1_k}^2} \sum_{k=1}^n{s_{2_k}^2} ... \sum_{k=1}^n{s_{m_k}^2}
+    \end{align*}
+\end{proof}
+
 \end{document}
 
