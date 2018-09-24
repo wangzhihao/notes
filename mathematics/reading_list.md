@@ -10,6 +10,8 @@
 # Books
 
 ### To Read
+* Cauchy, Augustin Louis Baron. Cours d'analyse de l'École Royale Polytechnique. Debure, 1821. [Note: written in French]
+* Polya, George. How to solve it: A new aspect of mathematical method. No. 246. Princeton university press, 2004.
 
 ### Reading
 
