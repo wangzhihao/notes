@@ -17,6 +17,7 @@
 # Books
 
 ### To Read
+* Lea, Douglas. Concurrent programming in Java: design principles and patterns. Addison-Wesley Professional, 2000.
 
 ### Reading
 * Chauvin, Yves, and David E. Rumelhart. Backpropagation: theory, architectures, and applications. Psychology Press, 2013. [link](https://drive.google.com/open?id=1UpgT6OUoeDU_WxGcktouyAqGt9LcnsT5)
