@@ -18,3 +18,8 @@
 
 ### Have Read
 * 【書動画】ひらがなの成り立ち [link1](https://www.youtube.com/watch?v=9hNcG4QTBDo&list=PLFtWDQP0BLuebqVeAihuLUIRhGugM3V24) [link2](https://www.youtube.com/watch?v=HS3viqFcpk4)
+
+
+# Misc Quesionts
+* Why can't we type “wa” in keyboard for は? [Answer](https://japanese.stackexchange.com/questions/6686/using-ha-instead-of-wa-with-qwerty-keyboards)
+* The etymology of 挨拶? [Answer](https://goo.gl/3uQede) / [Further Reading](https://ir.lib.hiroshima-u.ac.jp/files/public/3/38863/20160121105740651402/ReportJTP_18_169.pdf)
