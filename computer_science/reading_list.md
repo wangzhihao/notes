@@ -4,6 +4,7 @@
 * Rabiner, Lawrence R. "A tutorial on hidden Markov models and selected applications in speech recognition." Proceedings of the IEEE 77.2 (1989): 257-286.
 
 ### Reading
+* Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
 
 ### Have Read
 * Bayer, Rudolf, and Edward McCreight. "Organization and maintenance of large ordered indexes." Software pioneers. Springer, Berlin, Heidelberg, 2002. 245-262.
@@ -18,6 +19,7 @@
 
 ### To Read
 * Lea, Douglas. Concurrent programming in Java: design principles and patterns. Addison-Wesley Professional, 2000.
+* Berg, Mark de, et al. Computational geometry: algorithms and applications. Springer-Verlag TELOS, 2008. [link](http://people.inf.elte.hu/fekete/algoritmusok_msc/terinfo_geom/konyvek/Computational%20Geometry%20-%20Algorithms%20and%20Applications,%203rd%20Ed.pdf)
 
 ### Reading
 * Chauvin, Yves, and David E. Rumelhart. Backpropagation: theory, architectures, and applications. Psychology Press, 2013. [link](https://drive.google.com/open?id=1UpgT6OUoeDU_WxGcktouyAqGt9LcnsT5)
