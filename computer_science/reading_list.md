@@ -24,6 +24,7 @@
 
 ### Reading
 * Chauvin, Yves, and David E. Rumelhart. Backpropagation: theory, architectures, and applications. Psychology Press, 2013. [link](https://drive.google.com/open?id=1UpgT6OUoeDU_WxGcktouyAqGt9LcnsT5)
+* Gamma, Erich. Design patterns: elements of reusable object-oriented software. Pearson Education India, 1995.
 
 ### Have Read
 
