@@ -1,0 +1,28 @@
+# temporary thoughts
+
+## Signal and System
+
+* See how the complex exponential looks like
+
+```Matlab
+t = linspace(0, 5, 250);
+f = exp((0.5 + 10i)*t);
+plot3(t, real(f), imag(f))
+```
+![Rendered Results](https://image.ibb.co/jhxEy0/octave-online-line-4.png)
+
+* Does the form of convolution sum of LTI (Linear Time-Invariant) System voilate causality property?
+
+![convolution sum of LTI](https://image.ibb.co/kSAyrL/Snip20181021-2.png)
+
+Anwser is no, since for the system which obeys causality property, the `h[n-k]` will always be zero when `n-k < 0`. In other words, `y[n]` will never depend on `x[k]` which `k > n`.
+
+Another way to interpret convolution is by superposition. Acutally convolution is used to be called superposition integral. From LTI system's perspective, `y[n]` is the superposition of all the distributions produced by each `x[k]`. Each `x[k]` contributes one distribution `h` with magnitude/weight `x[k]`. E.g. If `h` is an exponential decay distribution, then there are infinite weighted exponential decay distributions sum up to construt the `y[n]`. This is exactly the same idea as stated in following quoted paragraph in the book "Signal and System":
+
+![interpret convolution in LTI's view](https://image.ibb.co/m2Jh1L/Snip20181021-3.png)
+
+[Here](http://lpsa.swarthmore.edu/Convolution/Convolution.html) are a good toturial by [Prof. Erik Cheever](http://www.swarthmore.edu/NatSci/echeeve1/) to show this idea with matlab illustration. The [matlab source code](http://lpsa.swarthmore.edu/Convolution/Convolution.m) is also avaliable.
+
+* How can we prove the commutativity of convolution intutively instread of the algebra way?
+
+The answer is probably we can't. This is the same like the high dimensional geometry which involves so many dimensions that man can think all together. Algebra serves as a way to let us focus on some partial dimensions instead of the whole dimensions. In this example, the Algebra proves the commutativity for only one point at `n`, and then apply the propety to all the `n` analytically.
