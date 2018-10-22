@@ -26,8 +26,10 @@
 
 ### To Read
 
+* Denis Auroux. 18.02 Multivariable Calculus. Fall 2007. [link](https://ocw.mit.edu/courses/mathematics/18-02-multivariable-calculus-fall-2007)
+
 ### Reading
 
-* David Jerison. Single Variable Calculus [link](https://ocw.mit.edu/courses/mathematics/18-01-single-variable-calculus-fall-2006/index.htm)
+* David Jerison. 18.01 Single Variable Calculus. Fall 2006. [link](https://ocw.mit.edu/courses/mathematics/18-01-single-variable-calculus-fall-2006)
 
 ### Have Read
