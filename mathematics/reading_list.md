@@ -27,6 +27,7 @@
 ### To Read
 
 * Denis Auroux. 18.02 Multivariable Calculus. Fall 2007. [link](https://ocw.mit.edu/courses/mathematics/18-02-multivariable-calculus-fall-2007)
+* Haynes Miller, and Arthur Mattuck. 18.03 Differential Equations. Spring 2010 [link](https://ocw.mit.edu/courses/mathematics/18-03-differential-equations-spring-2010)
 
 ### Reading
 
