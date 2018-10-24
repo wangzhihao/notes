@@ -34,7 +34,6 @@
 ### To Read
 
 * Alex Smola. Machine Learning 10-701 CMU 2015 [link](https://www.youtube.com/playlist?list=PLZSO_6-bSqHTTV7w9u7grTXBHMH-mw3qn)
-* Peter Kempthorne, Choongbum Lee, Vasily Strela, and Jake Xia. 18.S096 Topics in Mathematics with Applications in Finance. Fall 2013. [link](https://ocw.mit.edu/courses/mathematics/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/index.htm)
 * Eric Grimson, Peter Szolovits, and Trevor Darrell. 6.001 Structure and Interpretation of Computer Programs. Spring 2005. [link](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/index.htm)
 * Alan Oppenheim. RES.6-007 Signals and Systems. Spring 2011. [link](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/index.htm) / [book](https://lisbooks.files.wordpress.com/2016/04/signals-and-systems-prentice-hall-1996.pdf)
 

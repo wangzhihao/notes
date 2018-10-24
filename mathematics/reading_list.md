@@ -28,6 +28,7 @@
 
 * Denis Auroux. 18.02 Multivariable Calculus. Fall 2007. [link](https://ocw.mit.edu/courses/mathematics/18-02-multivariable-calculus-fall-2007)
 * Haynes Miller, and Arthur Mattuck. 18.03 Differential Equations. Spring 2010 [link](https://ocw.mit.edu/courses/mathematics/18-03-differential-equations-spring-2010)
+* Peter Kempthorne, Choongbum Lee, Vasily Strela, and Jake Xia. 18.S096 Topics in Mathematics with Applications in Finance. Fall 2013. [link](https://ocw.mit.edu/courses/mathematics/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/index.htm)
 
 ### Reading
 
