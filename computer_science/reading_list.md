@@ -21,6 +21,7 @@
 * Lea, Douglas. Concurrent programming in Java: design principles and patterns. Addison-Wesley Professional, 2000.
 * Berg, Mark de, et al. Computational geometry: algorithms and applications. Springer-Verlag TELOS, 2008. [link](http://people.inf.elte.hu/fekete/algoritmusok_msc/terinfo_geom/konyvek/Computational%20Geometry%20-%20Algorithms%20and%20Applications,%203rd%20Ed.pdf)
 * Abelson, Harold, Gerald Jay Sussman, and Julie Sussman. Structure and interpretation of computer programs. Justin Kelly, 1996.[link](http://web.mit.edu/alexmv/6.037/sicp.pdf)
+* Kleppmann, Martin. Designing data-intensive applications: The big ideas behind reliable, scalable, and maintainable systems. " O'Reilly Media, Inc.", 2017. [Note: Recommended by colleagues youli and gefei]
 
 ### Reading
 * Chauvin, Yves, and David E. Rumelhart. Backpropagation: theory, architectures, and applications. Psychology Press, 2013. [link](https://drive.google.com/open?id=1UpgT6OUoeDU_WxGcktouyAqGt9LcnsT5)
