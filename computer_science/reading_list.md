@@ -5,6 +5,7 @@
 
 ### Reading
 * Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
+* Ghuloum, Abdulaziz. "An incremental approach to compiler construction." Proceedings of the 2006 Scheme and Functional Programming Workshop, Portland, OR. Citeseer. 2006. [paper](https://github.com/namin/inc/blob/master/docs/paper.pdf) / [tutorial](https://github.com/namin/inc/blob/master/docs/tutorial.pdf) / [step by step implementation](https://github.com/namin/inc) by [Nada Amin](https://www.cl.cam.ac.uk/~na482/cv/)/ [implemenation: ikarus scheme](http://ikarus-scheme.org)
 
 ### Have Read
 * Bayer, Rudolf, and Edward McCreight. "Organization and maintenance of large ordered indexes." Software pioneers. Springer, Berlin, Heidelberg, 2002. 245-262.
@@ -36,6 +37,7 @@
 
 * Alex Smola. Machine Learning 10-701 CMU 2015 [link](https://www.youtube.com/playlist?list=PLZSO_6-bSqHTTV7w9u7grTXBHMH-mw3qn)
 * Eric Grimson, Peter Szolovits, and Trevor Darrell. 6.001 Structure and Interpretation of Computer Programs. Spring 2005. [link](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/index.htm)
+* CS 61A: Structure and Interpretation of Computer Programs [Really fancy website](https://cs61a.org/)
 * Alan Oppenheim. RES.6-007 Signals and Systems. Spring 2011. [link](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/index.htm) / [book](https://lisbooks.files.wordpress.com/2016/04/signals-and-systems-prentice-hall-1996.pdf)
 
 ### Reading
