@@ -36,10 +36,11 @@
 ### To Read
 
 * Alex Smola. Machine Learning 10-701 CMU 2015 [link](https://www.youtube.com/playlist?list=PLZSO_6-bSqHTTV7w9u7grTXBHMH-mw3qn)
-* Eric Grimson, Peter Szolovits, and Trevor Darrell. 6.001 Structure and Interpretation of Computer Programs. Spring 2005. [link](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/index.htm)
 * CS 61A: Structure and Interpretation of Computer Programs [Really fancy website](https://cs61a.org/)
 * Alan Oppenheim. RES.6-007 Signals and Systems. Spring 2011. [link](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/index.htm) / [book](https://lisbooks.files.wordpress.com/2016/04/signals-and-systems-prentice-hall-1996.pdf)
+* Paul Penfield, and Seth Lloyd. 6.050J Information and Entropy. Spring 2008. [link](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-050j-information-and-entropy-spring-2008)
 
 ### Reading
+* Gerald Jay Sussman, and Hal Abelson. 6.001 Structure and Interpretation of Computer Programs. Spring 1986. [link](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/index.htm)
 
 ### Have Read
