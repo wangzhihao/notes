@@ -24,6 +24,7 @@
 * Abelson, Harold, Gerald Jay Sussman, and Julie Sussman. Structure and interpretation of computer programs. Justin Kelly, 1996.[link](http://web.mit.edu/alexmv/6.037/sicp.pdf)
 * Kleppmann, Martin. Designing data-intensive applications: The big ideas behind reliable, scalable, and maintainable systems. " O'Reilly Media, Inc.", 2017. [Note: Recommended by colleagues youli and gefei]
 * Gormley, Clinton, and Zachary Tong. Elasticsearch: The Definitive Guide: A Distributed Real-Time Search and Analytics Engine. " O'Reilly Media, Inc.", 2015.
+* Pierce, Benjamin C., and C. Benjamin. Types and programming languages. MIT press, 2002. [link](http://ropas.snu.ac.kr/~kwang/520/pierce_book.pdf) / [link2](https://books.google.com/books/about/Types_and_Programming_Languages.html?id=ti6zoAC9Ph8C)
 
 ### Reading
 * Chauvin, Yves, and David E. Rumelhart. Backpropagation: theory, architectures, and applications. Psychology Press, 2013. [link](https://drive.google.com/open?id=1UpgT6OUoeDU_WxGcktouyAqGt9LcnsT5)
