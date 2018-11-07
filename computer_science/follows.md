@@ -7,6 +7,7 @@
 
 # Resources followed
 * [awesome-courses](https://github.com/prakhar1989/awesome-courses) collected by Prakhar Srivastav
+* [The Most Important C++ Books...Ever. Opinion by Scott Meyers](https://www.artima.com/cppsource/top_cpp_books.html)
 
 # Awards followed
 * [IEEE James H. Mulligan Jr. Education Medal](https://en.wikipedia.org/wiki/IEEE_James_H._Mulligan_Jr._Education_Medal)
