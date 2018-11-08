@@ -33,3 +33,8 @@ If we are in the headless console, we can use `jdb` to debug the Java applicatio
 ```
 jdb -attach localhost:8000
 ```
+
+Here are some useful queries in jdb:
+```
+eval new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(SOME_OBJECT)
+```
