@@ -14,6 +14,7 @@
 * Polya, George. How to solve it: A new aspect of mathematical method. No. 246. Princeton university press, 2004.
 * [Fletcher, Roger](http://www.maths.dundee.ac.uk/~fletcher/). Practical methods of optimization. John Wiley & Sons, 2013.
 * Schwartz, Laurent, and Institut de mathématique (Strasbourg). Théorie des distributions. Vol. 2. Paris: Hermann, 1957.[Note: The theory of distributions clarifies the (then) mysteries of the Dirac delta function and Heaviside step function, written in French] / [link](https://archive.org/details/LaurentSchwartzThorieDesDistributionsBook4You1/page/n11)
+* McDonald, John H. Handbook of biological statistics. Vol. 2. Baltimore, MD: sparky house publishing, 2009. [link](http://www.biostathandbook.com)
 
 ### Reading
 
