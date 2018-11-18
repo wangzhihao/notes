@@ -13,3 +13,6 @@
 
 # Awards followed
 * [IEEE James H. Mulligan Jr. Education Medal](https://en.wikipedia.org/wiki/IEEE_James_H._Mulligan_Jr._Education_Medal)
+
+# Conference followed
+* VLDB [home page](https://www.vldb.org/) / [wikipedia](https://en.wikipedia.org/wiki/VLDB_conference)
