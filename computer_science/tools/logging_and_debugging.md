@@ -25,7 +25,8 @@ java.util.logging.FileHandler.pattern=/output/logs/java%u.log
 java.util.logging.FileHandler.formatter=java.util.logging.SimpleFormatter
 ```
 
-Sometimes the logging might be insuffcient to detect what's going wrong. For example the application has few logging code near the suspicious code. At such an case, we can use debug, and especailly remote debug for remote application. Take Java as example, the Java Platform Debugging Architecture(JPDA) enables us to remote debug a Java application. We can add the following configurations to java to enable remote debugging, replace the 8000 port with the port you desired.
+Sometimes the logging might be insuffcient to detect what's going wrong. For example the application has few logging code near the suspicious code. At such an case, we can use debug, and especailly remote debug for remote application. Take Java as example, the Java Platform Debugging Architecture(JPDA) enables us to remote debug a Java application. The following configurations gives us a sample to enable remote debugging. For details of the usage of different arguments, please check [this post](https://docs.oracle.com/javase/7/docs/technotes/guides/jpda/conninv.html)
+
 ```
 -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y
 ```
@@ -38,3 +39,6 @@ Here are some useful queries in jdb:
 ```
 eval new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(SOME_OBJECT)
 ```
+
+**Trick**: Sometimes the system is so complex that we don't know how to pass the debugging configuration to the jvm. A very simple and effective method is just check the process command from `ps -ef`, append java command with our debugging arguments and then invoke the command directly. Here is [one example](https://pastebin.com/raw/CHeCNAJ7) in this approach.
+
