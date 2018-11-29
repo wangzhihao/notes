@@ -1,0 +1,3 @@
+`Hive.loadDynamicPartitions` and `Hive.loadPartition` is to move data from temporary directory to destination directory, which means the computation is already done when reaching the stage, only some move works remain.
+
+Question: Why [Hive.replaceFiles](https://github.com/apache/hive/blob/rel/release-1.2.2/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java#L2859) swallow the exception? Even [in the lastest version](https://github.com/apache/hive/blame/master/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java#L4711) it's annoated as _won't affect the final result_. However, both Spark and Hive can be affected.
