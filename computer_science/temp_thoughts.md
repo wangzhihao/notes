@@ -1,4 +1,15 @@
 # temporary thoughts
+## Async/await
+* https://en.wikipedia.org/wiki/Async/await
+* https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+
+## Flow
+* https://flow.org/en/
+* https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html
+
+## MQTT
+http://mqtt.org/
+https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html
 
 ## Signal and System
 
