@@ -2,6 +2,7 @@
 
 ### To Read
 * Rabiner, Lawrence R. "A tutorial on hidden Markov models and selected applications in speech recognition." Proceedings of the IEEE 77.2 (1989): 257-286.
+* Codd, Edgar F. "A relational model of data for large shared data banks." Communications of the ACM 13.6 (1970): 377-387.
 
 ### Reading
 * Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
@@ -14,6 +15,7 @@
 * Maymounkov, Petar, and David Mazieres. "Kademlia: A peer-to-peer information system based on the xor metric." International Workshop on Peer-to-Peer Systems. Springer, Berlin, Heidelberg, 2002.
 * Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.
 * Novikoff, Albert B. On convergence proofs for perceptrons. STANFORD RESEARCH INST MENLO PARK CA, 1963.
+* K. M. Chandy and L. Lamport, “Distributed snapshots: determining global states of distributed systems,” ACM Transactions on Computer Systems (TOCS), vol. 3, no. 1, pp. 63–75, 1985.
 
 
 # Books
