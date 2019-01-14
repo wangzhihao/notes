@@ -1,0 +1,139 @@
+@startuml
+
+title Guice Class Diagram
+
+interface BindingScopingVisitor<V> {
+  V visitEagerSingleton();
+  V visitScope(Scope scope);
+  V visitScopeAnnotation(Class<? extends Annotation> scopeAnnotation);
+  V visitNoScoping();
+}
+
+interface BindingTargetVisitor<T, V> {
+  V visit(InstanceBinding<? extends T> binding);
+  V visit(ProviderInstanceBinding<? extends T> binding);
+  V visit(ProviderKeyBinding<? extends T> binding);
+  V visit(LinkedKeyBinding<? extends T> binding);
+  V visit(ExposedBinding<? extends T> binding);
+  V visit(UntargettedBinding<? extends T> binding);
+  V visit(ConstructorBinding<? extends T> binding);
+  V visit(ConvertedConstantBinding<? extends T> binding);
+  V visit(ProviderBinding<? extends T> binding);
+}
+
+class DefaultBindingTargetVisitor<T, V> {
+	// No-op visitor for subclassing. All interface methods simply delegate\nto visitOther(Binding), returning its result.
+}
+class Indexer {
+	// Used by RealMapBinder to de-dupe user bindings.
+}
+DefaultBindingTargetVisitor --|> BindingTargetVisitor
+Indexer --|> BindingScopingVisitor
+Indexer ..|> DefaultBindingTargetVisitor
+
+
+class BindingProcessor {
+
+}
+
+class AbstractBindingProcessor {
+
+}
+
+class AbstractProcessor {
+	protected InjectorImpl injector;
+}
+
+class DefaultElementVisitor<V> {
+
+}
+
+interface ElementVisitor<V> {
+  <T> V visit(Binding<T> binding);
+  V visit(InterceptorBinding binding)
+  V visit(ScopeBinding binding);
+  V visit(TypeConverterBinding binding);
+  V visit(InjectionRequest<?> request);
+  V visit(StaticInjectionRequest request);
+  <T> V visit(ProviderLookup<T> lookup);
+  <T> V visit(MembersInjectorLookup<T> lookup);
+  V visit(Message message);
+  V visit(PrivateElements elements);
+  V visit(TypeListenerBinding binding);
+  V visit(ProvisionListenerBinding binding);
+  V visit(RequireExplicitBindingsOption option);
+  V visit(DisableCircularProxiesOption option);
+  V visit(RequireAtInjectOnConstructorsOption option);
+  V visit(RequireExactBindingAnnotationsOption option);
+  V visit(ModuleAnnotatedMethodScannerBinding binding);
+
+
+}
+BindingProcessor ..|> AbstractBindingProcessor
+AbstractBindingProcessor ..|> AbstractProcessor
+AbstractProcessor ..|> DefaultElementVisitor
+DefaultElementVisitor --|> ElementVisitor
+
+
+LookupProcessor ..|> AbstractProcessor
+MessageProcessor ..|> AbstractProcessor
+
+class Processor<T,V> {
+}
+Processor ..|> DefaultBindingTargetVisitor
+BindingProcessor ..> Processor
+
+
+interface Injector {
+  void injectMembers(Object instance);
+  <T> MembersInjector<T> getMembersInjector(TypeLiteral<T> typeLiteral);
+  <T> MembersInjector<T> getMembersInjector(Class<T> type);
+  Map<Key<?>, Binding<?>> getBindings();
+  Map<Key<?>, Binding<?>> getAllBindings();
+  <T> Binding<T> getBinding(Key<T> key);
+  <T> Binding<T> getBinding(Class<T> type);
+  <T> Binding<T> getExistingBinding(Key<T> key);
+  <T> List<Binding<T>> findBindingsByType(TypeLiteral<T> type);
+  <T> Provider<T> getProvider(Key<T> key);
+  <T> Provider<T> getProvider(Class<T> type);
+  <T> T getInstance(Key<T> key);
+  <T> T getInstance(Class<T> type);
+  Injector getParent();
+  Injector createChildInjector(Iterable<? extends Module> modules);
+  Injector createChildInjector(Module... modules);
+  Map<Class<? extends Annotation>, Scope> getScopeBindings();
+  Set<TypeConverterBinding> getTypeConverterBindings();
+}
+InjectorImpl --|> Injector
+AbstractProcessor *.. InjectorImpl
+InjectionRequestProcessor ..|> AbstractProcessor
+
+class InternalInjectorCreator {
+	private final InjectionRequestProcessor injectionRequestProcessor;
+    private final Initializer initializer;
+}
+
+class Guice {
+ 	public static Injector createInjector(Module... modules);
+}
+
+InternalInjectorCreator *.. InjectionRequestProcessor
+Guice ..> InternalInjectorCreator
+
+class InjectionPoint {
+	private final TypeLiteral<?> declaringType;
+	private final ImmutableList<Dependency<?>> dependencies;
+}
+
+class Dependency {
+	//A reverse reference to the injection point\n//which this dependency belongs to.
+	private final InjectionPoint injectionPoint;
+    private final Key<T> key;
+    private final int parameterIndex;
+}
+
+
+InjectionPoint "1" -- "n" Dependency
+
+
+@enduml
