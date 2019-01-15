@@ -47,6 +47,7 @@ https://portal2010.amazon.com/sites/sable/public/Shared%20Documents/Deep%20Dive%
 * DataPath Precompute
     * https://w.amazon.com/bin/view/Datapath/Precompute
     * https://w.amazon.com/index.php/Datapath/Internal/EventBus/Design
+    After confirmed with DataPath team, they don't support scheduled triggers currently. See [the email](https://code.amazon.com/packages/Zhihaow_work_notes/blobs/mainline/--/logs/Re-%20Is%20there%20any%20Scheduled%20trigger%20for%20DataPath%20Precompute.eml?download=1)
 # Existing projects
 * FIRM
 * Excess page
