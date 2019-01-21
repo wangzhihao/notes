@@ -25,6 +25,7 @@
     * [Frequency moments](https://m.tau.ac.il/~nogaa/PDFS/amsz4.pdf)
     * HyperLogLog
     * [General Incremental Sliding-Window Aggregation](http://www.vldb.org/pvldb/vol8/p702-tangwongsan.pdf)
+    * [Frequent Items](https://people.eecs.berkeley.edu/~satishr/cs270/sp11/rough-notes/Streaming-two.pdf), top-k problem   
 9. Actor model 
     * https://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/
     * https://en.wikipedia.org/wiki/History_of_the_Actor_model
