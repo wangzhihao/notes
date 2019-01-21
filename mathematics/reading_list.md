@@ -2,6 +2,7 @@
 
 ### To Read
 * Cauchy, Augustin Louis. Mémoire sur les intégrales définies prises entre des limites imaginaires; par M. Augustin-Louis Cauchy.. chez De Bure frères, rue Serpente, 1825. [Note: written in French]
+* Johnson, William B., and Joram Lindenstrauss. "Extensions of Lipschitz mappings into a Hilbert space." Contemporary mathematics 26.189-206 (1984): 1.
 ### Reading
 
 ### Have Read
