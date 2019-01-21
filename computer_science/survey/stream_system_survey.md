@@ -24,7 +24,7 @@
     * http://infolab.stanford.edu/~ullman/mmds/ch4a.pdf
     * [Frequency moments](https://m.tau.ac.il/~nogaa/PDFS/amsz4.pdf)
     * HyperLogLog
-    * [Frequent Items](https://people.eecs.berkeley.edu/~satishr/cs270/sp11/rough-notes/Streaming-two.pdf), [top-k problem](http://www.cse.ust.hk/~raywong/comp5331/References/EfficientComputationOfFrequentAndTop-kElementsInDataStreams.pdf)
+    * [Frequent Items](https://people.eecs.berkeley.edu/~satishr/cs270/sp11/rough-notes/Streaming-two.pdf), [top-k problem](http://www.cse.ust.hk/~raywong/comp5331/References/EfficientComputationOfFrequentAndTop-kElementsInDataStreams.pdf) https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
 9. Actor model 
     * https://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/
     * https://en.wikipedia.org/wiki/History_of_the_Actor_model
