@@ -5,6 +5,26 @@
 * Exact-once delivery
 
 # External
+1. Algebra: It seems that [CQL](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cql.pdf) gains a lot of popularity. Compares it with Aurora. In Aurora, out of order event is meant to be discarded. This is useful in the cases the event can be replayed or affordable to be missing. However it might not satisfy our requirement. 
+    * http://cs.brown.edu/research/borealis/public/
+    * http://cs.brown.edu/research/aurora/
+    * http://cs.brown.edu/research/aurora/cidr05.borealis.pdf
+    * http://eolo.cps.unizar.es/docencia/doctorado/Articulos/DataStreams/Data%20Streams.%20Algorithms%20and%20Applications.pdf
+    * https://people.cs.umass.edu/~mcgregor/papers/13-graphsurvey.pdf
+    * http://hirzels.com/martin/papers/csur14-streamopt.pdf
+2. process calculus 
+    * Baeten, Jos CM. "A brief history of process algebra." Theoretical Computer Science 335.2-3 (2005): 131-146.
+    * R. Milner. A Calculus of Communicating Systems. Number 92 in Lecture Notes in Computer Science. Springer Verlag, 1980.
+    * https://en.wikipedia.org/wiki/Actor_model_and_process_calculi_history
+    * https://en.wikipedia.org/wiki/Process_calculus
+    * https://en.wikipedia.org/wiki/%CE%A0-calculus
+    * https://en.wikipedia.org/wiki/Communicating_sequential_processes
+    * Milner, Robin. "A calculus of communicating systems." LNCS 92 (1980). [link](https://drive.google.com/open?id=1LGxFKD2nyv0nLDIVYzSZNhcVTg1CdTJP)
+3. [Stream algorithms](https://en.wikipedia.org/wiki/Streaming_algorithm). this item talks about stream algorithms like frequency moments, approximate distinct counts, aggreation over windows.
+    * http://infolab.stanford.edu/~ullman/mmds/ch4a.pdf
+    * [Frequency moments](https://m.tau.ac.il/~nogaa/PDFS/amsz4.pdf)
+    * HyperLogLog
+    * [General Incremental Sliding-Window Aggregation](http://www.vldb.org/pvldb/vol8/p702-tangwongsan.pdf)
 1. Kafka
 2. Apache Flink
     * http://www.vldb.org/pvldb/vol10/p1718-carbone.pdf
@@ -16,29 +36,11 @@
 4. Druid
 5. Storm
 6. Spark streaming
-7. Aurora
-In Aurora, out of order event is meant to be discarded. This is useful in the cases the event can be replayed or affordable to be missing. However it might not satisfy our requirement. 
-    * http://cs.brown.edu/research/borealis/public/
-    * http://cs.brown.edu/research/aurora/
-    * http://cs.brown.edu/research/aurora/cidr05.borealis.pdf
-    * http://eolo.cps.unizar.es/docencia/doctorado/Articulos/DataStreams/Data%20Streams.%20Algorithms%20and%20Applications.pdf
-    * https://people.cs.umass.edu/~mcgregor/papers/13-graphsurvey.pdf
-    * http://hirzels.com/martin/papers/csur14-streamopt.pdf
 8. Streaming algorithm https://en.wikipedia.org/wiki/Streaming_algorithm
-    * http://infolab.stanford.edu/~ullman/mmds/ch4a.pdf
-    * HyperLogLog
 9. Actor model 
     * https://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/
     * https://en.wikipedia.org/wiki/History_of_the_Actor_model
     * Agha, Gul A. Actors: A model of concurrent computation in distributed systems. No. AI-TR-844. MASSACHUSETTS INST OF TECH CAMBRIDGE ARTIFICIAL INTELLIGENCE LAB, 1985.
-10. process calculus 
-    * Baeten, Jos CM. "A brief history of process algebra." Theoretical Computer Science 335.2-3 (2005): 131-146.
-    * R. Milner. A Calculus of Communicating Systems. Number 92 in Lecture Notes in Computer Science. Springer Verlag, 1980.
-    * https://en.wikipedia.org/wiki/Actor_model_and_process_calculi_history
-    * https://en.wikipedia.org/wiki/Process_calculus
-    * https://en.wikipedia.org/wiki/%CE%A0-calculus
-    * https://en.wikipedia.org/wiki/Communicating_sequential_processes
-    * Milner, Robin. "A calculus of communicating systems." LNCS 92 (1980). [link](https://drive.google.com/open?id=1LGxFKD2nyv0nLDIVYzSZNhcVTg1CdTJP)
 # Internal
 * Sable
 https://portal2010.amazon.com/sites/sable/public/Shared%20Documents/Deep%20Dive%20on%20Datapath%20-%20May%202016.pdf
