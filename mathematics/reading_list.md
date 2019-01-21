@@ -23,9 +23,7 @@
 * Steele, J. Michael. The Cauchy-Schwarz master class: an introduction to the art of mathematical inequalities. Cambridge University Press, 2004.
 
 ### Have Read
-* Eckart, Carl, and Gale Young. "The approximation of one matrix by another of lower rank." Psychometrika 1.3 (1936): 211-218.
-
-Comments: See the proof on [Low-rank approximation](https://en.wikipedia.org/wiki/Low-rank_approximation), which is more concise.
+* Eckart, Carl, and Gale Young. "The approximation of one matrix by another of lower rank." Psychometrika 1.3 (1936): 211-218. __Comments:__ See the proof on [Low-rank approximation](https://en.wikipedia.org/wiki/Low-rank_approximation), which is more concise.
 
 
 # Open Course
