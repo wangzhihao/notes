@@ -20,7 +20,7 @@
     * https://en.wikipedia.org/wiki/%CE%A0-calculus
     * https://en.wikipedia.org/wiki/Communicating_sequential_processes
     * Milner, Robin. "A calculus of communicating systems." LNCS 92 (1980). [link](https://drive.google.com/open?id=1LGxFKD2nyv0nLDIVYzSZNhcVTg1CdTJP)
-3. [Stream algorithms](https://en.wikipedia.org/wiki/Streaming_algorithm). this item talks about stream algorithms like frequency moments, approximate distinct counts, aggreation over windows. The [FlatFAT](http://www.vldb.org/pvldb/vol8/p702-tangwongsan.pdf) is a nice binary tree data structure to support efficient Sliding-Window Aggregration for those commulative operations like SUM, AVG, MEAN, DEV, MAX etc.
+3. [Stream algorithms](https://en.wikipedia.org/wiki/Streaming_algorithm). this item talks about stream algorithms like frequency moments, approximate distinct counts, aggreation over windows. The [FlatFAT](http://www.vldb.org/pvldb/vol8/p702-tangwongsan.pdf) is a nice binary tree data structure to support efficient sliding-window aggregration for those commulative operations like SUM, AVG, MEAN, DEV, MAX etc.
     * http://infolab.stanford.edu/~ullman/mmds/ch4a.pdf
     * [Frequency moments](https://m.tau.ac.il/~nogaa/PDFS/amsz4.pdf)
     * HyperLogLog
