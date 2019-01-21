@@ -25,6 +25,12 @@
     * [Frequency moments](https://m.tau.ac.il/~nogaa/PDFS/amsz4.pdf)
     * HyperLogLog
     * [General Incremental Sliding-Window Aggregation](http://www.vldb.org/pvldb/vol8/p702-tangwongsan.pdf)
+9. Actor model 
+    * https://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/
+    * https://en.wikipedia.org/wiki/History_of_the_Actor_model
+    * Agha, Gul A. Actors: A model of concurrent computation in distributed systems. No. AI-TR-844. MASSACHUSETTS INST OF TECH CAMBRIDGE ARTIFICIAL INTELLIGENCE LAB, 1985.
+
+# Implementations
 1. Kafka
 2. Apache Flink
     * http://www.vldb.org/pvldb/vol10/p1718-carbone.pdf
@@ -36,11 +42,7 @@
 4. Druid
 5. Storm
 6. Spark streaming
-8. Streaming algorithm https://en.wikipedia.org/wiki/Streaming_algorithm
-9. Actor model 
-    * https://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/
-    * https://en.wikipedia.org/wiki/History_of_the_Actor_model
-    * Agha, Gul A. Actors: A model of concurrent computation in distributed systems. No. AI-TR-844. MASSACHUSETTS INST OF TECH CAMBRIDGE ARTIFICIAL INTELLIGENCE LAB, 1985.
+7. IBM streaming
 # Internal
 * Sable
 https://portal2010.amazon.com/sites/sable/public/Shared%20Documents/Deep%20Dive%20on%20Datapath%20-%20May%202016.pdf
