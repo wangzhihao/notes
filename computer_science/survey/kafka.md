@@ -6,6 +6,10 @@
 
 Kafka allows replay, while in normal queue systems the message disappear after consumed.
 
+> If a broker goes down, any message stored on it not yet consumed becomes unavailable. If the storage system on a broker is permanently damaged, any unconsumed message is lost forever.  In the future, we plan to add built-in replication in Kafka to redundantly store each message on multiple brokers.
+
+Kafka is not reliable, at least in its intial version inferred from [this paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/09/Kafka.pdf). Althougth it claims [to address it with replication](https://www.slideshare.net/JiangjieQin/no-data-loss-pipeline-with-apache-kafka-49753844?next_slideshow=1), concerns still remain.
+
 TODO: Compare Kinesis vs Kafka vs DDB stream. They look like similar
 
 # Reference
