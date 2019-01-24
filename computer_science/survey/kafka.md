@@ -11,6 +11,8 @@ Kafka allows replay, while in normal queue systems the message disappear after c
 Kafka is not reliable, at least in its intial version inferred from [this paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/09/Kafka.pdf). Althougth it claims [to address it with replication](https://www.slideshare.net/JiangjieQin/no-data-loss-pipeline-with-apache-kafka-49753844?next_slideshow=1), concerns still remain.
 
 TODO: Compare Kinesis vs Kafka vs DDB stream. They look like similar
+> Kinesis Streams is like Kafka Core. Kinesis Analytics is like Kafka Streams. A Kinesis Shard is like Kafka Partition.
+http://cloudurable.com/blog/kinesis-vs-kafka/index.html
 
 # Reference
 * Building LinkedIn’s Real-time Activity Data Pipeline, Ken Goodhope, Joel Koshy, Jay Kreps, Neha Narkhede, Richard Park, Jun Rao, Victor Yang Ye
