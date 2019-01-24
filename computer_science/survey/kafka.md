@@ -18,3 +18,4 @@ http://cloudurable.com/blog/kinesis-vs-kafka/index.html
 # Reference
 * Building LinkedIn’s Real-time Activity Data Pipeline, Ken Goodhope, Joel Koshy, Jay Kreps, Neha Narkhede, Richard Park, Jun Rao, Victor Yang Ye
 * https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations
+* https://en.wikipedia.org/wiki/Zero-copy
