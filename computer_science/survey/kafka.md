@@ -4,6 +4,10 @@
 
 [Another performance tuning](https://engineering.linkedin.com/kafka/benchmarking-apache-kafka-2-million-writes-second-three-cheap-machines) report of Kafka
 
+Kafka allows replay, while in normal queue systems the message disappear after consumed.
+
+TODO: Compare Kinesis vs Kafka vs DDB stream. They look like similar
+
 # Reference
 * Building LinkedIn’s Real-time Activity Data Pipeline, Ken Goodhope, Joel Koshy, Jay Kreps, Neha Narkhede, Richard Park, Jun Rao, Victor Yang Ye
 * https://cwiki.apache.org/confluence/display/KAFKA/Kafka+papers+and+presentations
