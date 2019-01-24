@@ -12,6 +12,7 @@ Kafka is not reliable, at least in its intial version inferred from [this paper]
 
 TODO: Compare Kinesis vs Kafka vs DDB stream. They look like similar
 > Kinesis Streams is like Kafka Core. Kinesis Analytics is like Kafka Streams. A Kinesis Shard is like Kafka Partition.
+
 http://cloudurable.com/blog/kinesis-vs-kafka/index.html
 
 # Reference
