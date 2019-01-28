@@ -18,7 +18,7 @@ Talks by Stephan Ewen, one of the original Flink creators.
 
 The analysis is based on version [v0.4-rc1](https://github.com/apache/flink/tree/v0.4-rc1), which is basically the Stratosphere code base.
 
-The entry point is [Dataset](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/DataSet.scala). Take the [cogroup operation](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/operators/CoGroupOperator.scala) as an example, it uses [Marcos](https://docs.scala-lang.org/overviews/macros/overview.html).
+The entry point is [Dataset](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/DataSet.scala). Take the [cogroup operation](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/operators/CoGroupOperator.scala) as an example, it uses [Marcos](https://docs.scala-lang.org/overviews/macros/overview.html), then it calls [CoGroupFunctionBase](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/functions/CoGroupFunction.scala#L23).
 
 # Reference
 * http://www.vldb.org/pvldb/vol10/p1718-carbone.pdf
