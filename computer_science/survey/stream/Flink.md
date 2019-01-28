@@ -18,7 +18,11 @@ Talks by Stephan Ewen, one of the original Flink creators.
 
 The analysis is based on version [v0.4-rc1](https://github.com/apache/flink/tree/v0.4-rc1), which is basically the Stratosphere code base.
 
-The entry point is [Dataset](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/DataSet.scala). Take the [PairwiseSP](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-examples/stratosphere-java-examples/src/main/java/eu/stratosphere/example/java/record/shortestpaths/PairwiseSP.java) as an example for [cogroup operation](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/operators/CoGroupOperator.scala), under the scene cogroup uses [Marcos](https://docs.scala-lang.org/overviews/macros/overview.html), and then calls [CoGroupFunctionBase](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/functions/CoGroupFunction.scala#L23).
+Take the [PairwiseSP](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-examples/stratosphere-java-examples/src/main/java/eu/stratosphere/example/java/record/shortestpaths/PairwiseSP.java) as an example, which is to calculate shortest path for every pair of points(floyd-algorithm). 
+
+We need to write some operators like the [cogroup operation](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/operators/CoGroupOperator.scala) to drive the workflow, in which the operation will call the corresponding function like [CoGroupFunctionBase](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/functions/CoGroupFunction.scala#L23). Inside the function, [Dataset](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/DataSet.scala) is manipulated.
+
+The [cogroup operation](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere-scala/src/main/scala/eu/stratosphere/api/scala/operators/CoGroupOperator.scala) uses [Marcos](https://docs.scala-lang.org/overviews/macros/overview.html).
 
 # Reference
 * http://www.vldb.org/pvldb/vol10/p1718-carbone.pdf
