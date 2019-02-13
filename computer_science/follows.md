@@ -12,6 +12,7 @@
 * [The Most Important C++ Books...Ever. Opinion by Scott Meyers](https://www.artima.com/cppsource/top_cpp_books.html)
 * [The Unofficial Google Data Science Blog](http://www.unofficialgoogledatascience.com/)
 * [O'Reilly Ideas](https://www.oreilly.com/ideas)
+* [MIT courses for Electrical Engineering and Computer Science](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/)
 
 # Awards followed
 * [IEEE James H. Mulligan Jr. Education Medal](https://en.wikipedia.org/wiki/IEEE_James_H._Mulligan_Jr._Education_Medal)
@@ -19,3 +20,4 @@
 
 # Conference followed
 * VLDB [home page](https://www.vldb.org/) / [wikipedia](https://en.wikipedia.org/wiki/VLDB_conference)
+* ACM/IEEE Supercomputing Conference [home page](http://supercomputing.org/)
