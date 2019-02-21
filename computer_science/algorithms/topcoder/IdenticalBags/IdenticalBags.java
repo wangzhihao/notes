@@ -16,7 +16,7 @@ public class IdenticalBags {
        return ans;
     }
     private boolean test(long[] candy, long bagSize, long bagNum) {
-       for(int i = candy.length - 1; i >=0; i--) {
+       for(int i = candy.length - 1; i >= 0; i--) {
             bagSize -= candy[i] / bagNum;
             if(bagSize <= 0) return true;
        }
