@@ -5,5 +5,4 @@
 However the Kinesis default retention can up to only 7 days at maximum.
 
 ## Lamdba architecture.
-
-Independent different fields should not delay each other.
+http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html
