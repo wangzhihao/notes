@@ -41,7 +41,8 @@ stenv.sqlQuery("""
               |   a.merchant, a.skus, a.snapshot_date
               """.stripMargin).toRetractStream[Row].print()
 
-// Use [Temporal table](https://ci.apache.org/projects/flink/flink-docs-release-1.7/dev/table/streaming/joins.html) to setup Lambda Achitechture on Flink
+// Use [Temporal table](https://ci.apache.org/projects/flink/flink-docs-release-1.7/dev/table/streaming/joins.html) to setup
+// Lambda Achitechture on Flink
 stenv.sqlQuery("""
               | select * from 
               |   Delta d, LATERAL TABLE (LatestAbsolute(d.snapshot_date)) a 
