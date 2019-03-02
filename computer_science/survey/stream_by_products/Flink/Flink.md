@@ -35,3 +35,12 @@ Take the [PairwiseSP](https://github.com/apache/flink/blob/v0.4-rc1/stratosphere
 * http://www.vldb.org/pvldb/vol10/p1718-carbone.pdf
 * http://www.diva-portal.org/smash/get/diva2:1059537/FULLTEXT01.pdf
 Alexandrov, Alexander, et al. "The stratosphere platform for big data analytics." The VLDB Journal—The International Journal on Very Large Data Bases 23.6 (2014): 939-964.
+
+
+# Flink SQL survey
+Study [this code](https://github.com/apache/flink/blob/master/flink-examples/flink-examples-batch/src/main/scala/org/apache/flink/examples/scala/relational/TPCHQuery3.scala) for [TPC-H Query 3 (Q3)](http://www.tpc.org/tpc_documents_current_versions/pdf/tpc-h_v2.18.0.pdf) However, this is for batch.
+
+A sample:
+https://aws.amazon.com/blogs/big-data/build-a-real-time-stream-processing-pipeline-with-apache-flink-on-aws/
+
+
