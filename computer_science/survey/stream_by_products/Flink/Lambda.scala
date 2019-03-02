@@ -15,8 +15,8 @@ val deltaTable = deltaStream.toTable(stenv, 'merchant, 'skus, 'snapshot_date.row
 val latestAbsolute = absoluteTable.createTemporalTableFunction('snapshot_date, 'merchant) 
 
 stenv.registerFunction("LatestAbsolute", latestAbsolute)
-stenv.registerDataStream("Absolute", absoluteStream, 'merchant, 'skus, 'snapshot_date)
-stenv.registerDataStream("Delta", deltaStream, 'merchant, 'skus, 'snapshot_date)
+stenv.registerTable("Absolute", absoluteTable)
+stenv.registerTable("Delta", deltaTable)
 
 
 
