@@ -4,6 +4,7 @@
  * Shell> ./build-target/bin/start-scala-shell.sh local
  */
 import java.sql.Timestamp
+import org.apache.flink.streaming.api.TimeCharacteristic
 senv.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
 
 // Due to scala Class.getSimpleName bug https://github.com/scala/bug/issues/2034 , don't use case class.
