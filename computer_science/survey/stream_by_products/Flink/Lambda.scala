@@ -19,7 +19,7 @@ stenv.registerDataStream("Delta", deltaStream, 'merchant, 'skus, 'snapshot_date)
 
 
 stenv.sqlQuery("select * from Absolute a, Delta d where a.merchant = d.merchant").toAppendStream[Row].print()
-stenv.sqlQuery("select * from Delta d, LATERAL TABLE (latestAbsolute(d.snapshot_date)) a where a.merchant = d.merchant").toAppendStream[Row].print()
+stenv.sqlQuery("select * from Delta d, LATERAL TABLE (LatestAbsolute(d.snapshot_date)) a where a.merchant = d.merchant").toAppendStream[Row].print()
 senv.execute("My streaming program")
 
 // Time-windowed Join
