@@ -4,6 +4,7 @@
  * Shell> ./build-target/bin/start-scala-shell.sh local
  */
 import java.sql.Timestamp
+senv.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
 
 // Due to scala Class.getSimpleName bug https://github.com/scala/bug/issues/2034 , don't use case class.
 val absoluteStream = senv.fromElements(("jim", 12, Timestamp.valueOf("2019-02-20 00:00:00")), ("Amy", 10, Timestamp.valueOf("2019-02-28 00:00:00")), ("jim", 20, Timestamp.valueOf("2019-03-02 00:00:00")))
