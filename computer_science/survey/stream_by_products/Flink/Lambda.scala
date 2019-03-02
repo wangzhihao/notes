@@ -30,8 +30,23 @@ stenv.registerTable("Absolute", absoluteTable)
 stenv.registerTable("Delta", deltaTable)
 
 // Use Dynamic Table and Time-windowed Join to implement Lambda Architechture on Flink
-stenv.sqlQuery("select a.merchant, a.skus, a.snapshot_date, a.skus + sum(d.skus) as real_time_skus from Absolute a, Delta d where a.merchant = d.merchant and d.snapshot_date > a.snapshot_date group by a.merchant, a.skus, a.snapshot_date").toRetractStream[Row].print()
+stenv.sqlQuery("""
+              | select 
+              |   a.merchant, a.skus, a.snapshot_date, a.skus + sum(d.skus) as real_time_skus 
+              | from 
+              |   Absolute a, Delta d 
+              | where 
+              |   a.merchant = d.merchant and d.snapshot_date > a.snapshot_date 
+              | group by 
+              |   a.merchant, a.skus, a.snapshot_date
+              """.stripMargin).toRetractStream[Row].print()
+
 // Use [Temporal table](https://ci.apache.org/projects/flink/flink-docs-release-1.7/dev/table/streaming/joins.html) to setup Lambda Achitechture on Flink
-stenv.sqlQuery("select * from Delta d, LATERAL TABLE (LatestAbsolute(d.snapshot_date)) a where a.merchant = d.merchant").toAppendStream[Row].print()
+stenv.sqlQuery("""
+              | select * from 
+              |   Delta d, LATERAL TABLE (LatestAbsolute(d.snapshot_date)) a 
+              | where a.merchant = d.merchant
+              """.stripMargin).toAppendStream[Row].print()
+
 senv.execute("My streaming program")
 
