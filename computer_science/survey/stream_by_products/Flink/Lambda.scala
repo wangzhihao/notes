@@ -20,21 +20,9 @@ stenv.registerDataStream("Delta", deltaStream, 'merchant, 'skus, 'snapshot_date)
 
 
 
-stenv.sqlQuery("select * from Absolute a, Delta d where a.merchant = d.merchant").toAppendStream[Row].print()
+// Use Dynamic Table and Time-windowed Join to implement Lambda Architechture on Flink
+stenv.sqlQuery("select a.merchant, a.skus, a.snapshot_date, a.skus + sum(d.skus) as real_time_skus from Absolute a, Delta d where a.merchant = d.merchant and d.snapshot_date > a.snapshot_date group by a.merchant, a.skus, a.snapshot_date").toRetractStream[Row].print()
+// Use [Temporal table](https://ci.apache.org/projects/flink/flink-docs-release-1.7/dev/table/streaming/joins.html) to setup Lambda Achitechture on Flink
 stenv.sqlQuery("select * from Delta d, LATERAL TABLE (LatestAbsolute(d.snapshot_date)) a where a.merchant = d.merchant").toAppendStream[Row].print()
 senv.execute("My streaming program")
-
-// Time-windowed Join
-val delta = SELECT *
-  FROM Orders o, Shipments s
-WHERE o.id = s.orderId AND
-    o.ordertime BETWEEN s.shiptime - INTERVAL '4' HOUR AND s.shiptime
-
-// Use [Temporal table](https://ci.apache.org/projects/flink/flink-docs-release-1.7/dev/table/streaming/joins.html) to setup Lambda Achitechture on Flink
-SELECT
-  batch.value + sum(delta.value) as real_time_value
-FROM
-  Batch AS batch,
-  LATERAL TABLE (Delta(batch.rowtime)) AS delta
-WHERE r.key = o.key
 
