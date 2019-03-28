@@ -5,19 +5,8 @@
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
  *
- * Sample Input
- * Shell> nc -l 9234
- * 1
- * 2
- * 4
- * 8
- *
- * Sample Output
- * (true,1,1)
- * (true,2,3)
- * (true,4,7)
- * (true,8,15)
- *
+ * Since Flink do not support following unbounded window by default, we can implment it by maintaining
+ * two streams: a sum stream and a preceding unbounded window stream. Substract them gives the answer. 
  */
 
 val numbers = senv.socketTextStream("localhost", 9234, '\n')
