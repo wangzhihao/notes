@@ -4,6 +4,20 @@
  *
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
+ *
+ * Sample Input
+ * Shell> nc -l 9234
+ * 1
+ * 2
+ * 4
+ * 8
+ *
+ * Sample Output
+ * (true,1,1)
+ * (true,2,3)
+ * (true,4,7)
+ * (true,8,15)
+ *
  */
 val numbers = senv.socketTextStream("localhost", 9234, '\n')
 val numbersTable = numbers.toTable(stenv, 'number, 'snapshot_date.proctime)
