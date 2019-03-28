@@ -39,7 +39,6 @@ val followingCumulativeSumTable = stenv.sqlQuery("""
      | select 
      |   total - cumulative_numbers as following_cumulative_numbers
      | from SumNumbers s, PrecedingNumbers p 
-     | where s.snapshot_date = p.snapshot_date
      """.stripMargin)
 
 followingCumulativeSumTable.toRetractStream[Row].print()
