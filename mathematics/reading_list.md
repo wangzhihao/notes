@@ -21,6 +21,7 @@
 ### Reading
 
 * Steele, J. Michael. The Cauchy-Schwarz master class: an introduction to the art of mathematical inequalities. Cambridge University Press, 2004.
+* Barr, Michael, and Charles Wells. Category theory for computing science. Vol. 49. New York: Prentice Hall, 1990. [link](http://www.math.mcgill.ca/triples/Barr-Wells-ctcs.pdf)
 
 ### Have Read
 * Eckart, Carl, and Gale Young. "The approximation of one matrix by another of lower rank." Psychometrika 1.3 (1936): 211-218. __Comments:__ See the proof on Wikipedia [Low-rank approximation](https://en.wikipedia.org/wiki/Low-rank_approximation), which is more concise.
