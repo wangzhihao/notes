@@ -10,17 +10,21 @@
  * two streams: a sum stream and a preceding unbounded window stream. Substract them gives the answer.
  */
 
+// 1,1,X00,100,2019-03-28
 val inventory = senv.socketTextStream("localhost", 9234, '\n').map(x => {
     val split = x.split(",")
-    (split(0).toInt, split(1).toInt, split(2), split(3).toDouble, split(4))
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, split(4))
 })
 val inventoryTable = inventory.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Inventory", inventoryTable)
 
-// 1,1,X00,53.2,2018-01-01
+// time order is ignored.
+// 1,1,X00,50,2018-03-26
+// 1,1,X00,25,2018-03-25
+// 1,1,X00,100,2018-03-24
 val event = senv.socketTextStream("localhost", 9235, '\n').map(x => {
     val split = x.split(",")
-    (split(0).toInt, split(1).toInt, split(2), split(3).toDouble, split(4))
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, split(4))
 })
 val eventTable = event.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Event", eventTable)
@@ -74,3 +78,4 @@ val inventoryAgeTable = stenv.sqlQuery("""
 
 inventoryAgeTable.toRetractStream[Row].print()
 senv.execute("My streaming program")
+
