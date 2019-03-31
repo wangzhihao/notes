@@ -17,7 +17,7 @@ val inventory = senv.socketTextStream("localhost", 9234, '\n').map(x => {
     val split = x.split(",")
     (split(0).toInt, split(1).toInt, split(2), split(3).toInt, toTimestamp(split(4)))
 })
-val inventoryTable = inventory.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
+val inventoryTable = inventory.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time)
 stenv.registerTable("Inventory", inventoryTable)
 
 // 1,1,X00,50,2018-03-26
@@ -30,7 +30,7 @@ val event = senv.socketTextStream("localhost", 9235, '\n').map(x => {
 val rawEventTable = { event
   //fallback to an beginning of history in case of lacking of enough events.
   .union(inventory.map(_.copy(_5 = toTimestamp("1995-01-01"))))
-  .toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
+  .toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time)
 }
 stenv.registerTable("RawEvent", rawEventTable)
 
