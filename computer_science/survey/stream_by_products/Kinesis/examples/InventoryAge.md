@@ -56,5 +56,5 @@ create or replace pump "inbound_events_pump" as
        "quantity",
        "event_time"
       from "SOURCE_SQL_STREAM_001"
-      where "event_type" = 'inbound';
+      where "event_type" = 'inflow';
 ```
