@@ -18,15 +18,15 @@ AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1
 ```
 
 ```sql
-CREATE OR REPLACE STREAM "DESTINATION_SQL_STREAM" (
+create or replace stream "inventory" (
     "merchant_customer_id" integer);
     
-CREATE OR REPLACE PUMP "myPUMP" AS 
-   INSERT INTO "DESTINATION_SQL_STREAM"
-      SELECT STREAM 
+create or replace pump "inventory_pump" as 
+   insert into "DESTINATION_SQL_STREAM"
+      select stream 
        "merchant_customer_id" -- the quote is mandatory
-      FROM "SOURCE_SQL_STREAM_001";
-
+      from "SOURCE_SQL_STREAM_001";
+      where "event_type" = "total";
 ```
 
 https://docs.aws.amazon.com/kinesisanalytics/latest/dev/stream-joins-concepts.html
