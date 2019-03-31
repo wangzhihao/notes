@@ -17,6 +17,7 @@ This is a cli command to populate data into kinesis.
 AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis put-record --stream-name zhihaow_inventory_age_test --data '{"merchant_customer_id":1234567,"marketplace_id":1,"fnsku":"X00FINFSK","quantity":53,"event_time":"2019-03-10T00:00:00.000Z"}' --partition-key dummy
 ```
 
+Here are the SQL in Kinesis Analytics:
 ```sql
 create or replace stream "inventory" (
     "merchant_customer_id" integer);
@@ -28,5 +29,3 @@ create or replace pump "inventory_pump" as
       from "SOURCE_SQL_STREAM_001"
       where "event_type" = "total";
 ```
-
-https://docs.aws.amazon.com/kinesisanalytics/latest/dev/stream-joins-concepts.html
