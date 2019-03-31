@@ -3,12 +3,12 @@ Kinesis Analytics currently only support one Kinesis source stream, so we need t
 
 ```json
 {
-    merchant_customer_id: integer,
-    marketplace_id: integer,
-    fnsku: varchar(16),
-    quantity: integer,
-    event_type: varchar(16),
-    event_time: timestamp
+    "merchant_customer_id": "integer",
+    "marketplace_id": "integer",
+    "fnsku": "varchar(16)",
+    "quantity": "integer",
+    "event_type": "varchar(16)",
+    "event_time": "timestamp"
 }
 ```
 
