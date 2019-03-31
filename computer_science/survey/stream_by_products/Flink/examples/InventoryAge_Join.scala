@@ -27,7 +27,7 @@ val event = senv.socketTextStream("localhost", 9235, '\n').map(x => {
     val split = x.split(",")
     val format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     val eventTime = new java.sql.Timestamp(format.parse(split(4)).getTime())
-    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, format.parse(split(4)))
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, eventTime)
 })
 val eventTable = event.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Event", eventTable)
