@@ -42,7 +42,7 @@ stenv.registerTable("EventSum", eventSumTable)
 val eventPrecedingCumulativeSumTable = stenv.sqlQuery("""
      | select
      |   merchant_id, marketplace_id, fnsku, quantity,
-     |   sum(cast(quantity as int)) over (order by proc_time range unbounded preceding) as cumulative_quantity,
+     |   sum(quantity) over (order by proc_time range unbounded preceding) as cumulative_quantity,
      |   event_time
      | from Event
      """.stripMargin)
