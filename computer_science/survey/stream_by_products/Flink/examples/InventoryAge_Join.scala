@@ -5,9 +5,6 @@
  *
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
- *
- * Since Flink doesn't support following unbounded window by default, we can implment it by maintaining
- * two streams: a sum stream and a preceding unbounded window stream. Substract them gives the answer.
  */
 
 // 1,1,X00,100,2019-03-28 00:00:00
