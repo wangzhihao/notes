@@ -22,10 +22,10 @@ create or replace stream "inventory" (
     "merchant_customer_id" integer);
     
 create or replace pump "inventory_pump" as 
-   insert into "DESTINATION_SQL_STREAM"
+   insert into "inventory"
       select stream 
        "merchant_customer_id" -- the quote is mandatory
-      from "SOURCE_SQL_STREAM_001";
+      from "SOURCE_SQL_STREAM_001"
       where "event_type" = "total";
 ```
 
