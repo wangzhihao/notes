@@ -58,3 +58,5 @@ create or replace pump "inbound_events_pump" as
       from "SOURCE_SQL_STREAM_001"
       where "event_type" = 'inflow';
 ```
+
+Notice [all uses of UNBOUNDED FOLLOWING are unsupported](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-allowed-disallowed-window.html)
