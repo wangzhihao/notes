@@ -62,8 +62,6 @@ val eventCumulativeSumTable = stenv.sqlQuery("""
 
 stenv.registerTable("EventCumulativeSum", eventCumulativeSumTable)
 
-eventCumulativeSumTable.toRetractStream[Row].print()
-
 val inventoryAgeTable = stenv.sqlQuery("""
      | select
      |   I.merchant_id, I.marketplace_id, I.fnsku,
