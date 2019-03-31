@@ -1,3 +1,5 @@
+Here are some sample queries against kinesis streams via AWS CLI.
+
 ```shell
 AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis list-streams
 
