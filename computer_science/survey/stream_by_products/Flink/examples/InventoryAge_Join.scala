@@ -44,7 +44,7 @@ val eventCumulativeSumTable = stenv.sqlQuery("""
     | and a.marketplace_id = b.marketplace_id
     | and a.fnsku = b.fnsku
     | where a.event_time >= b.event_time
-    | group by a.event_time
+    | group by a.merchant_id, a.marketplace_id, a.fnsku, a.event_time
     """.stripMargin)
 
 stenv.registerTable("EventCumulativeSum", eventCumulativeSumTable)
