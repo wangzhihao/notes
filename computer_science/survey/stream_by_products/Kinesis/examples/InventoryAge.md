@@ -21,12 +21,40 @@ AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1
 Here are the SQL in Kinesis Analytics:
 ```sql
 create or replace stream "inventory" (
-    "merchant_customer_id" integer);
+    "merchant_customer_id" integer,
+    "marketplace_id" integer,
+    "fnsku" varchar(16),
+    "quantity" integer,
+    "event_time" timestamp  
+);
+    
+create or replace stream "inbound_events" (
+    "merchant_customer_id" integer,
+    "marketplace_id" integer,
+    "fnsku" varchar(16),
+    "quantity" integer,
+    "event_time" timestamp  
+);
     
 create or replace pump "inventory_pump" as 
    insert into "inventory"
       select stream 
-       "merchant_customer_id" -- the double quote is mandatory for variable
+       "merchant_customer_id", -- the quote is mandatory
+       "marketplace_id",
+       "fnsku",
+       "quantity",
+       "event_time"
       from "SOURCE_SQL_STREAM_001"
-      where "event_type" = 'total'; -- the single quote is for string constant
+      where "event_type" = 'total';
+
+create or replace pump "inbound_events_pump" as 
+   insert into "inbound_events"
+      select stream 
+       "merchant_customer_id", -- the quote is mandatory
+       "marketplace_id",
+       "fnsku",
+       "quantity",
+       "event_time"
+      from "SOURCE_SQL_STREAM_001"
+      where "event_type" = 'inbound';
 ```
