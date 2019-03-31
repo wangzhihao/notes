@@ -13,7 +13,8 @@
 // 1,1,X00,100,2019-03-28
 val inventory = senv.socketTextStream("localhost", 9234, '\n').map(x => {
     val split = x.split(",")
-    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, split(4).toInt)
+    val format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, format.parse(split(4)))
 })
 val inventoryTable = inventory.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Inventory", inventoryTable)
@@ -23,10 +24,12 @@ stenv.registerTable("Inventory", inventoryTable)
 // 1,1,X00,100,2018-03-24
 val event = senv.socketTextStream("localhost", 9235, '\n').map(x => {
     val split = x.split(",")
-    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, split(4).toInt)
+    val format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, format.parse(split(4)))
 })
 val eventTable = event.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Event", eventTable)
+
 // Event table should be maintained small to avoid a huge state.
 val eventCumulativeSumTable = stenv.sqlQuery("""
     |select
