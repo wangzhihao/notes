@@ -5,7 +5,6 @@ public class ReconstructNumber {
     private static final String NO_ANSWER = "";
     private static final String NO_INITIAL = "blank";
 
-    // -1 means not visited, 0 means not possible, 1 means possible 
     private String [][] visit;
 
     private void init(int size) {
