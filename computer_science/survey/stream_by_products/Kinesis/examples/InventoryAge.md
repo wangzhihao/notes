@@ -25,7 +25,7 @@ create or replace stream "inventory" (
 create or replace pump "inventory_pump" as 
    insert into "inventory"
       select stream 
-       "merchant_customer_id" -- the quote is mandatory
+       "merchant_customer_id" -- the double quote is mandatory for variable
       from "SOURCE_SQL_STREAM_001"
-      where "event_type" = "total";
+      where "event_type" = 'total'; -- the single quote is for string constant
 ```
