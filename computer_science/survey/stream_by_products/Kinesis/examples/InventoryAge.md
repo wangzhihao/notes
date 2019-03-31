@@ -57,6 +57,24 @@ create or replace pump "inbound_events_pump" as
        "event_time"
       from "SOURCE_SQL_STREAM_001"
       where "event_type" = 'inflow';
+
+
+create or replace stream "inbound_cumulative_events" (
+    "merchant_customer_id" integer,
+    "marketplace_id" integer,
+    "fnsku" varchar(16),
+    "cumulative_sum_quantity" integer,
+    "event_time" timestamp  
+);
+
+create or replace pump "inbound_cumulative_events_pump" as 
+   insert into "inbound_cumulative_events"
+      select stream 
+       "merchant_customer_id", "marketplace_id", "fnsku",
+        sum("quantity") over (range unbounded preceding) as "cumulative_quantity",
+       "event_time"
+      from "inbound_events"
+;
 ```
 
 Notice [all uses of UNBOUNDED FOLLOWING are unsupported](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-allowed-disallowed-window.html)
