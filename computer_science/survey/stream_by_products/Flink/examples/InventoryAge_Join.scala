@@ -7,12 +7,15 @@
  * Shell> ./build-target/bin/start-scala-shell.sh local
  */
 
+def toTimestamp(date: String) = {
+    val format = new java.text.SimpleDateFormat("yyyy-MM-dd")
+    new java.sql.Timestamp(format.parse(date).getTime())
+}
+
 // 1,1,X00,100,2019-03-28
 val inventory = senv.socketTextStream("localhost", 9234, '\n').map(x => {
     val split = x.split(",")
-    val format = new java.text.SimpleDateFormat("yyyy-MM-dd")
-    val eventTime = new java.sql.Timestamp(format.parse(split(4)).getTime())
-    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, eventTime)
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, toTimestamp(split(4)))
 })
 val inventoryTable = inventory.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Inventory", inventoryTable)
@@ -22,11 +25,13 @@ stenv.registerTable("Inventory", inventoryTable)
 // 1,1,X00,100,2018-03-24
 val event = senv.socketTextStream("localhost", 9235, '\n').map(x => {
     val split = x.split(",")
-    val format = new java.text.SimpleDateFormat("yyyy-MM-dd")
-    val eventTime = new java.sql.Timestamp(format.parse(split(4)).getTime())
-    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, eventTime)
+    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, toTimestamp(split(4)))
 })
-val rawEventTable = event.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
+val rawEventTable = { event
+  //fallback to an beginning of history in case of lacking of enough events.
+  .union(inventory.map(_.copy(_5 = toTimestamp("1995-01-01"))))
+  .toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
+}
 stenv.registerTable("RawEvent", rawEventTable)
 
 val eventTable = stenv.sqlQuery("""
