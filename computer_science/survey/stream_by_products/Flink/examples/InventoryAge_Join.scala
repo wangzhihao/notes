@@ -5,6 +5,8 @@
  *
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
+ *
+ * It can handle out of order events.
  */
 
 def toTimestamp(date: String) = {
