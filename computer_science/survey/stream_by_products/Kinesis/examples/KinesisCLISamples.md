@@ -1,12 +1,13 @@
 Here are some sample queries against kinesis streams via AWS CLI.
 
 ```shell
-AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis list-streams
+Shell> AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis list-streams
 
-Shell> AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis put-record --stream-name zhihaow_inventory_age_test --data XzxkYXRhPl8x --partition-key dummy
+Shell> AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis put-record --stream-name zhihaow_inventory_age_test --data '{"merchant_customer_id":1234567,"marketplace_id":1,"fnsku":"X00FINFSK","quantity":53,"event_time":"2019-03-10T00:00:00.000Z"}' --partition-key dummy
+
 {
-    "ShardId": "shardId-000000000000",
-    "SequenceNumber": "49594348104124453756945298227039983254520891401675210754"
+    "SequenceNumber": "49594348104124453756945298229929315963399971540016562178",
+    "ShardId": "shardId-000000000000"
 }
 Shell> AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1 aws kinesis get-shard-iterator --stream-name kinesis-analytics-demo-stream --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON 
 {
