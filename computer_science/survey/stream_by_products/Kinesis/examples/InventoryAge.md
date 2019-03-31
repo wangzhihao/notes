@@ -4,11 +4,12 @@ AWS_CREDENTIALS_ODIN=com.amazon.access.fba-inv-health-for-devo-DataPlatformIAM-1
 
 ```sql
 CREATE OR REPLACE STREAM "DESTINATION_SQL_STREAM" (
-    "merchant_customer_id" numeric);
-
-CREATE OR REPLACE PUMP "myPUMP" AS
+    "merchant_customer_id" integer);
+    
+CREATE OR REPLACE PUMP "myPUMP" AS 
    INSERT INTO "DESTINATION_SQL_STREAM"
-      SELECT STREAM
-       merchant_customer_id
+      SELECT STREAM 
+       "merchant_customer_id" -- the quote is mandatory
       FROM "SOURCE_SQL_STREAM_001";
+
 ```
