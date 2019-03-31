@@ -71,6 +71,7 @@ create or replace pump "inbound_cumulative_events_pump" as
    insert into "inbound_cumulative_events"
       select stream 
        "merchant_customer_id", "marketplace_id", "fnsku",
+        -- the reorder issue is not handled here.
         sum("quantity") over (range unbounded preceding) as "cumulative_quantity",
        "event_time"
       from "inbound_events"
