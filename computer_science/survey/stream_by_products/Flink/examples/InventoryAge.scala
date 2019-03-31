@@ -18,7 +18,7 @@ val inventory = senv.socketTextStream("localhost", 9234, '\n').map(x => {
 val inventoryTable = inventory.toTable(stenv, 'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time, 'proc_time.proctime)
 stenv.registerTable("Inventory", inventoryTable)
 
-// time order is ignored.
+// Issue: cannot handle out of order like the following.
 // 1,1,X00,50,2018-03-26
 // 1,1,X00,25,2018-03-25
 // 1,1,X00,100,2018-03-24
