@@ -39,7 +39,7 @@ create or replace stream "inbound_events" (
 create or replace pump "inventory_pump" as 
    insert into "inventory"
       select stream 
-       "merchant_customer_id", -- the quote is mandatory
+       "merchant_customer_id",
        "marketplace_id",
        "fnsku",
        "quantity",
@@ -50,13 +50,13 @@ create or replace pump "inventory_pump" as
 create or replace pump "inbound_events_pump" as 
    insert into "inbound_events"
       select stream 
-       "merchant_customer_id", -- the quote is mandatory
+       "merchant_customer_id", -- the double quote is mandatory for variable
        "marketplace_id",
        "fnsku",
        "quantity",
        "event_time"
       from "SOURCE_SQL_STREAM_001"
-      where "event_type" = 'inflow';
+      where "event_type" = 'inflow'; -- the single quote is for single constant.
 
 
 create or replace stream "inbound_cumulative_events" (
