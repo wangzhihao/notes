@@ -2,17 +2,18 @@ import java.util.*;
 import java.io.*;
 
 public class ReconstructNumber {
+    private static final int NO_NEXT = -1;
+    private static final int NO_INITIAL = -2;
     private static final String NO_ANSWER = "";
-    private static final String NO_INITIAL = "blank";
 
-    private String [][] visit;
+    private int [][] next;
 
     private void init(int size) {
-        visit = new String[10][size];
-        for(int i = 0; i < 10; i++) Arrays.fill(visit[i], NO_INITIAL);
+        next = new int[10][size];
+        for(int i = 0; i < 10; i++) Arrays.fill(next[i], NO_INITIAL);
     }
 
-    private boolean isValid(int a, int b, char operator) {
+    private boolean isValid(int a, int b, int operator) {
         switch(operator) {
             case '<':
                 return a < b;
@@ -25,25 +26,27 @@ public class ReconstructNumber {
         }
     }
 
-    private String test(int number, int idx, String comparisons) {
-        if(idx >= comparisons.length()) return String.valueOf(number);
-        if(visit[number][idx] != NO_INITIAL) return visit[number][idx];
+    private int haveNext(int number, int idx, String comparisons) {
+        if(idx == comparisons.length()) return number;
+        if(next[number][idx] != NO_INITIAL) return next[number][idx];
 
         for(int i = 0; i < 10; i++) {
-            if(isValid(number, i, comparisons.charAt(idx)) && test(i, idx+1, comparisons) != NO_ANSWER) {
-                visit[number][idx] = number + test(i, idx+1, comparisons);
-                return visit[number][idx];
+            if(isValid(number, i, comparisons.charAt(idx)) && haveNext(i, idx+1, comparisons) != NO_NEXT) {
+                next[number][idx] = i;
+                return next[number][idx];
             }
         }
-        visit[number][idx] = NO_ANSWER;
-        return visit[number][idx];
+        next[number][idx] = NO_NEXT;
+        return next[number][idx];
     }
-
+    private String report(int number, int idx, int length) {
+        return number + (idx == length ? "" : report(next[number][idx], idx+1, length));
+    }
     public String smallest(String comparisons) {
         init(comparisons.length());
         for(int i = 1; i < 10; i++) {
-            if(test(i, 0, comparisons) != NO_ANSWER) {
-                return test(i, 0, comparisons);
+            if(haveNext(i, 0, comparisons) != NO_NEXT) {
+                return report(i, 0, comparisons.length());
             }
         }
         return NO_ANSWER;
