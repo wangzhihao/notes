@@ -1,7 +1,18 @@
 /**
- * This code run with flink scala shell in local mode as follows:
+ * We need to setup the socket first
+ * Shell> nc -l 9234
  *
+ * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
+ *
+ * 0. Each record in snapshot stream has field snapshot_date.
+ * 1. Each record in event stream has field event_time.
+ * 2. Only the snapshot with the latest snapshot_date is used.
+ * 3. Old snapshots should be able to turncate and to discard.
+ * 4. Only the event records later than the latest snapshot are used.
+ * 5. Old events should be able to turncate and to discard.
+ * 6. A custom fold function can be provided by users to combine the snapshot and the events.
+ * 7. Only one unified stream is desired for the final output.
  */
 import java.sql.Timestamp
 import org.apache.flink.streaming.api.TimeCharacteristic
