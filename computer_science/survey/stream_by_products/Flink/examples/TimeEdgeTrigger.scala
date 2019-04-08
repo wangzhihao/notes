@@ -8,6 +8,8 @@
  * This example is not time edge trigger. The time changes won't trigger the re-execution.
  *
  * This link should provide a viable solution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/process_function.html
+ *
+ * Instead of have a timer or trigger, this can be implemented as on-demand out of the Flink.
  */
 
 val number = senv.socketTextStream("localhost", 9234, '\n').map(x => {
