@@ -4,22 +4,21 @@
  *
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
- * 
- * This example is not time edge trigger. The time changes won't trigger the re-execution.
  *
- * This link should provide a viable solution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/process_function.html
- *
- * Instead of have a timer or trigger, this can be implemented as on-demand out of the Flink.
+ * Use a dummy field to force cartesian join.
  */
+val DUMMY = "dummy"
+val periodicalTimeTrigger = senv.socketTextStream("localhost", 9234, '\n').map((_, DUMMY))
+stenv.registerTable("PeriodicalEvents", periodicalTimeTrigger.toTable(stenv, 'event, 'dummy))
 
-val number = senv.socketTextStream("localhost", 9234, '\n').map(x => {
-    val split = x.split(",")
-    (split(0).toInt)
-})
-val numberTable = number.toTable(stenv, 'delta)
-stenv.registerTable("Number", numberTable)
+val date = senv.fromElements((192), (2000), (300000)).map((_, DUMMY))
+stenv.registerTable("SnapshotDate", date.toTable(stenv, 'delta, 'dummy))
 
+stenv.sqlQuery("""
+   | select TIMESTAMPADD(SECOND, d.delta, CURRENT_TIMESTAMP) from SnapshotDate d, PeriodicalEvents e
+   | where d.dummy = e.dummy
+    """.stripMargin).toRetractStream[Row].print()
 
-val currentTime = stenv.sqlQuery("select TIMESTAMPADD(SECOND, delta, CURRENT_TIMESTAMP) from Number")
-currentTime.toRetractStream[Row].print()
 senv.execute("My streaming program")
+
+
