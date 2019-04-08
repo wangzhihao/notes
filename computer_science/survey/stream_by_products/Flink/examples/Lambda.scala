@@ -46,6 +46,8 @@ stenv.registerTable("Delta", deltaTable)
 // As a workaround you can cast the time attributes of input tables to TIMESTAMP before.
 // ./flink-table/flink-table-planner/src/main/scala/org/apache/flink/table/plan/rules/datastream/DataStreamJoinRule.scala
 //
+// Use bounded time window can avoid above error.
+//
 stenv.sqlQuery("""
               | select 
               |   a.merchant, a.skus, a.snapshot_date, a.skus + sum(d.skus) as real_time_skus 
