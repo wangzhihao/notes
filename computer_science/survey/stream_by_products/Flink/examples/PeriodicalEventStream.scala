@@ -7,7 +7,7 @@
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 
 def getPeriodicalEventStream(delay: Long, period: Long): DataStream[String] = {
-    senv.getSource(new SourceFunction[String]() {
+    senv.addSource(new SourceFunction[String]() {
       @volatile var isRunning = true
       val SLEEP_INTERVAL = 1000L;
       def run(ctx: SourceFunction.SourceContext[String]) {

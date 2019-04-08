@@ -7,9 +7,33 @@
  *
  * Use a dummy field to force cartesian join.
  */
+
+import org.apache.flink.streaming.api.functions.source.SourceFunction
+
+def getPeriodicalEventStream(delay: Long, period: Long): DataStream[String] = {
+    senv.addSource(new SourceFunction[String]() {
+      @volatile var isRunning = true
+      val SLEEP_INTERVAL = 1000L;
+      def run(ctx: SourceFunction.SourceContext[String]) {
+        val t = new java.util.Timer()
+        val task = new java.util.TimerTask {
+          def run() =  ctx.collect((new java.util.Date().toString()))
+        }
+        t.schedule(task, delay, period)
+        while (isRunning) {
+          Thread.sleep(SLEEP_INTERVAL)
+        }
+      }
+      
+      def cancel() {
+        isRunning = false
+      }
+    })
+} 
+
 val DUMMY = "dummy"
-val periodicalTimeTrigger = senv.socketTextStream("localhost", 9234, '\n').map((_, DUMMY))
-stenv.registerTable("PeriodicalEvents", periodicalTimeTrigger.toTable(stenv, 'event, 'dummy))
+val periodicalEvent = getPeriodicalEventStream(0, 3000L).map((_, DUMMY))
+stenv.registerTable("PeriodicalEvents", periodicalEvent.toTable(stenv, 'event, 'dummy))
 
 val date = senv.fromElements((192), (2000), (300000)).map((_, DUMMY))
 stenv.registerTable("SnapshotDate", date.toTable(stenv, 'delta, 'dummy))
@@ -20,5 +44,4 @@ stenv.sqlQuery("""
     """.stripMargin).toRetractStream[Row].print()
 
 senv.execute("My streaming program")
-
 
