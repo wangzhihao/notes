@@ -1,10 +1,8 @@
 /**
- * We need to setup the socket first
- * Shell> nc -l 9234
- *
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
  *
+ * Emit periodical events(date) in each 3 seconds. 
  */
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 
