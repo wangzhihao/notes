@@ -5,7 +5,9 @@
  * This code run with flink scala shell in local mode as follows:
  * Shell> ./build-target/bin/start-scala-shell.sh local
  *
- * To prevent the stream is shut down too early even before the timer is triggered, we need to use a socket stream instead of a collection stream.
+ * To prevent the stream is shut down too early even before the timer is triggered,
+ * we need to use an unbounded stream like socket stream instead of a bounded stream
+ * like collection stream.
 */
 
 import org.apache.flink.streaming.api.functions.ProcessFunction
