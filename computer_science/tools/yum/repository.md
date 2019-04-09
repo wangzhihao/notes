@@ -51,3 +51,4 @@ We can also verify with the repolist command that the repo is enabled.
 
 # Some popular repos
 1. https://fedoraproject.org/wiki/EPEL
+2. https://fedoraproject.org/wiki/Third_party_repositories
