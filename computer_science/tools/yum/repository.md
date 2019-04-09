@@ -40,3 +40,11 @@ enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
 gpgcheck=0
 ```
+
+# Enable the repository
+
+```
+sudo yum-config-manager --enable fc6-extras
+```
+
+We can also verify with the repolist command that the repo is enabled.
