@@ -52,3 +52,8 @@ We can also verify with the repolist command that the repo is enabled.
 # Some popular repos
 1. https://fedoraproject.org/wiki/EPEL
 2. https://fedoraproject.org/wiki/Third_party_repositories
+
+```shell
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+```
