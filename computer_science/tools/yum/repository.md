@@ -1,3 +1,5 @@
+# Check the repository
+
 ```shell
 zhihaow@dev-dsk-zhihaow-ec2-2c-72819b04] sudo yum repolist                                                                                                                         ~
 [sudo] password for zhihaow:
@@ -17,4 +19,24 @@ dev-dsk-updates                                                          Amazon 
 docker-ce-edge                                                           Docker CE Edge - x86_64                                                                                  44
 docker-ce-stable                                                         Docker CE Stable - x86_64                                                                                39
 repolist: 7,245
+```
+
+# Add a new repository
+
+Place the following into `/etc/yum.repos.d/FC6.repo`
+
+```conf
+[extras]
+name=Fedora Core 6 Extras
+mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=extras-6&arch=$basearch
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
+gpgcheck=0
+
+[fc6-updates]
+name=Fedora Core 6 Updates
+mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-fc6&arch=$basearch
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
+gpgcheck=0
 ```
