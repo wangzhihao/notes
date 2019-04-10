@@ -57,3 +57,6 @@ We can also verify with the repolist command that the repo is enabled.
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
 ```
+
+# Some repo discovery service
+https://rpms.remirepo.net/
