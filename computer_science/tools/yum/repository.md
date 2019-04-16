@@ -59,4 +59,5 @@ sudo yum install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-
 ```
 
 # Some repo discovery service
-https://rpms.remirepo.net/
+1. https://rpms.remirepo.net/
+2. https://fedora.pkgs.org/29/fedora-i386/fedora-repos-29-1.noarch.rpm.html
