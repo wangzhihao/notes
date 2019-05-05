@@ -25,11 +25,16 @@ import java.sql.Timestamp
 import org.apache.flink.streaming.api.TimeCharacteristic
 senv.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
 
-val inventory = senv.socketTextStream("localhost", 9234, '\n').map(x => {
-    val split = x.split(",")
-    //'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time
-    (split(0).toInt, split(1).toInt, split(2), split(3).toInt, toTimestamp(split(4)))
-})
+val inventory = {
+  senv.socketTextStream("localhost", 9234, '\n')
+    .map(x => {
+      val split = x.split(",")
+      //'merchant_id, 'marketplace_id, 'fnsku, 'quantity, 'event_time
+      (split(0).toInt, split(1).toInt, split(2), split(3).toInt, toTimestamp(split(4)))
+    })
+    .keyBy(0, 1, 2)
+    .maxBy(4)
+    .print()
+}
 
-inventory.keyBy(0, 1, 2).maxBy(4).print()
 senv.execute("My streaming program")
