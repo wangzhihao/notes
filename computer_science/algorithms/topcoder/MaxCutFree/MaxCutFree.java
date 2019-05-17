@@ -1,27 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-
-class Pair implements Comparable<Pair>{
-    private int first;
-    private int second;
-
-    public Pair(int a, int b){
-        this.first = a;
-        this.second = b;
-    }
-
-    @Override
-    public int compareTo(Pair p) {
-        return this.first - p.first;
-    }
-
-    @Override
-    public String toString() {
-        return first + "," + second;
-    }
-}
-
 public class MaxCutFree {
 
     private int[] scc(int n, int[] a, int[] b) {
@@ -32,9 +11,10 @@ public class MaxCutFree {
     public int solve(int n, int[] a, int[] b) {
        int [] components = scc(n, a, b);
 
+       // build an adjacency list for graph with bridge edge only.
        boolean [] invalid = new boolean[n];
        int [] deg = new int[n];
-       List<Integer>[] edges = new ArraryList<Integer>[n];
+       List<Integer>[] edges = new ArraryList[n];
        for(int i = 0; i < n; i++) { 
            invalid[i] = false;
            deg[i] = 0;
@@ -52,27 +32,32 @@ public class MaxCutFree {
          edges[a[i]].add(b[i]);
          edges[b[i]].add(a[i]);
        }
-       PriorityQueue<Pair> queue = new PriorityQueue<Pair>();
+       // Greedy, always handle the node with lowest deg.
+       List<Integer> next = new ArrayList<Integer>();
        for(int i = 0; i < n; i++) { 
-           queue.add(new Pair(deg[i],i));
+           if(deg[i] <= 1) next.add(i);
        }
-       Pair head;
        int res = 0;
-       while((head = queue.poll()) != null) {
-           int node = head.second;
-           if(invalid[node]) continue;
-           res ++;
-           invalid[node] = true;
-           for(int i = 0; i < edges[node].size(); i++) {
-                int next = edges[node][i];
-                if(invalid[next])continue;
-                invalid[next] = true;
-                for (int j = 0; j < edges[next].size(); j++) {
-                    int nnext = edges[next][j];
-                    if(invalid[nnext]) continue;
-                    deg[nnext]--;
-                    queue.add(new Pair(deg[nnext], nnext));
-                }
+       while(next.size() > 0) {
+           for(int i = 0; i < next.size(); i++) { 
+               int node = next[i];
+               if(invalid[node]) continue;
+               res ++;
+               invalid[node] = true;
+               for(int i = 0; i < edges[node].size(); i++) {
+                    int node2 = edges[node][i];
+                    if(invalid[node2])continue;
+                    invalid[node2] = true;
+                    for (int j = 0; j < edges[node2].size(); j++) {
+                        int node3= edges[node2][j];
+                        if(invalid[node3]) continue;
+                        deg[node3]--;
+                    }
+               }
+           }
+           next.clear();
+           for(int i = 0; i < n; i++) { 
+               if(deg[i] <= 1 && !invalid[i]) next.add(i);
            }
        }
     
