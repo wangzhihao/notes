@@ -1,0 +1,1 @@
+Option 1. We can create a file [.settings/org.eclipse.jdt.core.prefs](https://gist.githubusercontent.com/fbricon/30c5971f7e492c8a74ca2b2d7a7bb966/raw/867a8427b22a239b99bcab9946e8bcecde30eb46/org.eclipse.jdt.core.prefs) and then jdt.ls will read it.
