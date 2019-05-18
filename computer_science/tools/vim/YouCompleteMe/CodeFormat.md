@@ -1,1 +1,1 @@
-Option 1. We can create a file [.settings/org.eclipse.jdt.core.prefs](https://gist.githubusercontent.com/fbricon/30c5971f7e492c8a74ca2b2d7a7bb966/raw/867a8427b22a239b99bcab9946e8bcecde30eb46/org.eclipse.jdt.core.prefs) and then jdt.ls will read it.
+Option 1. We can create a file [.settings/org.eclipse.jdt.core.prefs](https://gist.githubusercontent.com/wangzhihao/3332519ba72a65d308103923054114db/raw/0c12e014f70adc8c35732a5ffa0dc809111d70d8/gistfile1.txt) and then jdt.ls will read it.
