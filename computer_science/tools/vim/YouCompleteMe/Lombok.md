@@ -9,3 +9,5 @@ However such an workaround is buggy, it breaks the format feature.
 ```
 ResponseFailedException: Request failed: -32603: Internal error.
 ```
+
+Another post talked about this issue: https://github.com/Valloric/YouCompleteMe/issues/3288
