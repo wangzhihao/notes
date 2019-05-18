@@ -1,0 +1,1 @@
+I use jdt.ls to provide java language support such as code completion and formatting. It need to know the classpath to provide senmatic support. Current jdt.ls knows the eclipse and maven project. Inside company, we can use `bb eclipse` to generate eclipse .classpath and .project files from a brazil package.
