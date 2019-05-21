@@ -49,5 +49,5 @@ for(Link link : links) {
 ```
 
 # Reference
-https://code.amazon.com/reviews/CR-5605013
+CR-5605013
 
