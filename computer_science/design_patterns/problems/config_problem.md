@@ -1,3 +1,4 @@
+# Problem version 1
 Think about on a page with several links. For different regions we want to show parts of links.
 ```
 NA:                EU:               FE:
@@ -10,3 +11,7 @@ NA:                EU:               FE:
 ```
 
 How do we write a clean and flexible code for this?
+
+# Reference
+https://code.amazon.com/reviews/CR-5605013
+
