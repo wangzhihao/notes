@@ -13,7 +13,7 @@ NA:                EU:               FE:
 How do we write a clean and flexible code for this?
 
 # Attempt 1
-One propsal is to write a checker method for each link, and thus one config slot for each link in config file and one if-statement in code. It looks like this:
+One proposal is to write a checker method for each link, and thus one config slot for each link in config file and one if-statement in code. It looks like this:
 ```java
 if (ConfigUtils.isLink1Visible()) {
    displayLink1();
