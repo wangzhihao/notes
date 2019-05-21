@@ -37,6 +37,9 @@ The drawback of the proposal is that we will have too many config slots to maint
 # Problem Version 2
 Think about the case that "Link 1 and Link 3" can be fall into a category, which usually are luanched together.
 
+# Attempt 2
+To make both the links and the visibility options to be data.
+
 # Reference
 https://code.amazon.com/reviews/CR-5605013
 
