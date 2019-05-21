@@ -32,7 +32,7 @@ if (ConfigUtils.isLink4Visible()) {
 }
 ```
 
-The drawback of the proposal is that we will have too many config slots when the similar pages increase in the project. 
+The drawback of the proposal is that we will have too many config slots to maintain when the similar pages increase in the project. 
 
 # Problem version 2
 Think about the case that "Link 1 and Link 3" can be fall into a category, which usually are luanched together.
