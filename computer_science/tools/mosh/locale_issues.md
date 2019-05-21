@@ -34,7 +34,7 @@ Connection to dev-dsk-zhihaow-ec2-2c-72819b04.us-west-2.amazon.com closed.
 
 ## Solution
 
-Use the following commands to check the locale configuration in your OS. Different OS have different naming conventions. In our examples, the right name can be en_US.UTF-8
+Use the following commands to check the locale configuration in your __client__ OS. Different OS have different naming conventions. In our examples, the right name can be en_US.UTF-8
 
 ```
 shell> locale
