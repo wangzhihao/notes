@@ -38,7 +38,15 @@ The drawback of the proposal is that we will have too many config slots to maint
 Think about the case that "Link 1 and Link 3" can be fall into a category, which usually are luanched together.
 
 # Attempt 2
-To make both the links and the visibility options to be data. Then we can write uniform code to manipulate this data.
+To make both the links and the visibility options to be data. Then we can write uniform code to manipulate this data. The pseudo code looks like this:
+```
+List<Link> links = getLinksFromDataStore(marketplaceId);
+for(Link link : links) {
+    if (link.isVisible()) {
+        link.show();
+    }
+}
+```
 
 # Reference
 https://code.amazon.com/reviews/CR-5605013
