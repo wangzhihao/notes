@@ -15,8 +15,8 @@ public class MaxCutFree {
     private int[] components;
     private boolean[] invalid;
 
-    private boolean isBridge(int a, int b) {
-        return components[a] == component[b];
+    private boolean isBridge(int i, int j) {
+        return components[i] == components[j];
     }
 
     private void deg(int n, int[] a, int[] b) {
@@ -24,7 +24,8 @@ public class MaxCutFree {
             deg[i] = 0;
         }
         for (int i = 0; i < a.length; i++) {
-            if (isBridge(a[i], b[i]) || invalid[a[i]] || invalid[b[i]]) {
+            if(isBridge(a[i], b[i])) continue;
+            if (invalid[a[i]] || invalid[b[i]]) {
                 continue;
             }
             deg[a[i]]++;
@@ -35,6 +36,7 @@ public class MaxCutFree {
     private void visit(int node, int[] a, int[] b) {
         invalid[node] = true;
         for (int i = 0; i < a.length; i++) {
+            if(isBridge(a[i], b[i])) continue;
             if (a[i] == node || b[i] == node) {
                 invalid[a[i]] = true;
                 invalid[b[i]] = true;
@@ -43,8 +45,7 @@ public class MaxCutFree {
     }
 
     public int solve(int n, int[] a, int[] b) {
-        SCC scc = new SCC();
-        component = scc.scc(n, a, b);
+        components = new SCC().scc(n, a, b);
         invalid = new boolean[n];
         deg = new int[n];
         for (int i = 0; i < n; i++) {
