@@ -11,7 +11,18 @@ public class MaxCutFree {
 
     private int[] deg;
     private boolean[] invalid;
+    private boolean[] bridge;
 
+    // O(n^2) to find strong connected component
+    private void findBridge(int n, int[] a, int[] b) {
+        for(int i = 0; i < a.length; i++) {
+            boolean [] visit = new boolean[n];
+            for(int j = 0; j < n; j++) visit[j] = false;
+            bridge[i] = isBridge(i, n, a, b, visit); 
+        }
+    }
+    private boolean isBridge(int edgeIdx, int n, int[] a, int [] b, boolean [] visit) {
+    }
     private void deg(int n, int[] a, int[] b) {
         for (int i = 0; i < n; i++) {
             deg[i] = 0;
@@ -73,7 +84,7 @@ public class MaxCutFree {
                 a[i] = sc.nextInt();
                 b[i] = sc.nextInt();
             }
-            int res = clazz.generate(n, a, b);
+            int res = clazz.solve(n, a, b);
             System.out.println(res);
         }
     }
