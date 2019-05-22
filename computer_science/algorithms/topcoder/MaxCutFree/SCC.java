@@ -6,7 +6,9 @@ import java.io.*;
  */
 public class SCC {
     private List<Integer>[] edges;
-    private List<Int> order;
+    private List<Integer> order;
+    private int [] orderReverse;
+    private int [] decedants;
     private boolean [] visit;
     private Set<Long> edgesVisit;
     private int [] components;
@@ -18,6 +20,7 @@ public class SCC {
 
     private void visit(int node) {
         order.add(node); 
+        orderReverse[node] = order.size() - 1;
         visit[node] = true;
         for(int i = 0; i < edges[node].size(); i++) {
             int next = edges[node].get(i);
@@ -27,13 +30,27 @@ public class SCC {
                 visit(next);
             }
         }
+        decedants[node] = order.size() - 1 - orderReverse[node];
     }
-    private void dfs(int node) {
+    private boolean isDecedant(int v, int h) {
+        return orderReverse[v] >= orderReverse[h] && orderReverse[v] <= orderReverse[h] + decedants[h]; 
+    }
+
+    private void bfs(int node) {
+        Queue<Integer> S = new Queue<Integer>(); 
         for(int i = 0; i < edges[node].size(); i++) {
             int next = edges[node].get(i);
             if(edgesVisit.contains(hash(node, next)) || components[next] != -1) continue;
+            S.add(next);
+        }
+        while(!S.isEmpty()) {
+            int next = S.poll();
             components[next] = components[node];
-            dfs(next);
+            for(int i = 0; i < edges[next].size(); i++) {
+                int nnext = edges[next].get(i);
+                if(!edgesVisit.contains(hash(node, next)) || components[nnext] != -1 || orderReverse[nnext] > orderReverse[next]) continue;
+                S.add(nnext);
+            }
         }
     }
 
@@ -42,6 +59,8 @@ public class SCC {
         edges = new ArrayList[n];
         edgesVisit = new HashSet<Long>();
         order = new ArrayList<Integer>();
+        orderReverse = new int[n];
+        decedants = new int[n];
         components = new int[n];
         visit = new boolean[n];
         for(int i = 0; i < n; i++) {
@@ -54,14 +73,16 @@ public class SCC {
             edges[b[i]].add(a[i]);
         }
 
-        //dfs to built a pre-order traversal
-        visit(0);
+        //bfs to built a pre-order traversal
+        for(int i = 0; i < n; i++) {
+            if(!visit[i]) visit(i);
+        }
 
         for(int i = 0; i < order.size(); i++) {
             int node = order.get(i);
-            if(components[i] != -1)continue;
-            components[i] = i;
-            dfs(i);
+            if(components[node] != -1)continue;
+            components[node] = node;
+            bfs(node);
         }
         return components;
     }
