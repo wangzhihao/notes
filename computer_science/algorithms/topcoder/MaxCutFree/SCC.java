@@ -8,7 +8,6 @@ public class SCC {
     private List<Integer>[] edges;
     private List<Integer> order;
     private int [] orderReverse;
-    private int [] decedants;
     private boolean [] visit;
     private Set<Long> edgesVisit;
     private int [] components;
@@ -30,14 +29,10 @@ public class SCC {
                 visit(next);
             }
         }
-        decedants[node] = order.size() - 1 - orderReverse[node];
-    }
-    private boolean isDecedant(int v, int h) {
-        return orderReverse[v] >= orderReverse[h] && orderReverse[v] <= orderReverse[h] + decedants[h]; 
     }
 
     private void bfs(int node) {
-        Queue<Integer> S = new Queue<Integer>(); 
+        Queue<Integer> S = new LinkedList<Integer>(); 
         for(int i = 0; i < edges[node].size(); i++) {
             int next = edges[node].get(i);
             if(edgesVisit.contains(hash(node, next)) || components[next] != -1) continue;
@@ -48,7 +43,7 @@ public class SCC {
             components[next] = components[node];
             for(int i = 0; i < edges[next].size(); i++) {
                 int nnext = edges[next].get(i);
-                if(!edgesVisit.contains(hash(node, next)) || components[nnext] != -1 || orderReverse[nnext] > orderReverse[next]) continue;
+                if(!edgesVisit.contains(hash(nnext, next)) || components[nnext] != -1 || orderReverse[nnext] > orderReverse[next]) continue;
                 S.add(nnext);
             }
         }
@@ -60,7 +55,6 @@ public class SCC {
         edgesVisit = new HashSet<Long>();
         order = new ArrayList<Integer>();
         orderReverse = new int[n];
-        decedants = new int[n];
         components = new int[n];
         visit = new boolean[n];
         for(int i = 0; i < n; i++) {
@@ -77,6 +71,7 @@ public class SCC {
         for(int i = 0; i < n; i++) {
             if(!visit[i]) visit(i);
         }
+        print("orderReverse", orderReverse);
 
         for(int i = 0; i < order.size(); i++) {
             int node = order.get(i);
@@ -87,6 +82,15 @@ public class SCC {
         return components;
     }
 
+    private static void print(String name, int [] elements) {
+            System.out.println(name);
+            for(Object element: elements) {
+                System.out.print(element);
+                System.out.print(" ,");
+            }
+            System.out.println();
+    
+    }
     public static void main(String[] args) throws Exception {
         SCC clazz = new SCC();
         Scanner sc = new Scanner(System.in);
@@ -100,9 +104,7 @@ public class SCC {
                 b[i] = sc.nextInt();
             }
             int[] res = clazz.scc(n, a, b);
-            for(int i = 0; i < res.length; i++) {
-                System.out.println("node " + i + "'s root is " + res[i]);
-            }
+            print("components", res);
         }
     }
 }
