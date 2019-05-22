@@ -1,8 +1,9 @@
 import java.util.*;
 import java.io.*;
+
 /**
- * Greeedy algorithm. Each time pick the valid node with lowest degree.
- * Time complexity: max(O(n^2), O(n*m)) m is the edge number. 
+ * Greeedy algorithm. Each time pick the valid node with lowest degree. Time
+ * complexity: max(O(n^2), O(n*m)) m is the edge number.
  */
 public class MaxCutFree {
 
@@ -24,8 +25,8 @@ public class MaxCutFree {
 
     private void visit(int node, int[] a, int[] b) {
         invalid[node] = true;
-        for(int i = 0; i < a.length; i++) {
-            if(a[i] == node || b[i] == node) {
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == node || b[i] == node) {
                 invalid[a[i]] = true;
                 invalid[b[i]] = true;
             }
@@ -45,27 +46,28 @@ public class MaxCutFree {
             int lowestDeg = -1;
             deg(n, a, b);
             for (int i = 0; i < n; i++) {
-                if(!invalid[i] && (lowestDeg == -1 || lowestDeg >= deg[i])) {
+                if (!invalid[i] && (lowestDeg == -1 || lowestDeg >= deg[i])) {
                     lowestDeg = deg[i];
                     lowestDegNode = i;
                 }
             }
-            if(lowestDeg == -1) break;
+            if (lowestDeg == -1)
+                break;
             visit(lowestDegNode, a, b);
-            res ++; 
+            res++;
         }
         return res;
     }
 
-    public static void main(String [] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         MaxCutFree clazz = new MaxCutFree();
         Scanner sc = new Scanner(System.in);
         while (true) {
             int n = sc.nextInt();
             int m = sc.nextInt();
-            int [] a = new int[m];
-            int [] b = new int[m];
-            for ( int i = 0; i < m; i++) {
+            int[] a = new int[m];
+            int[] b = new int[m];
+            for (int i = 0; i < m; i++) {
                 a[i] = sc.nextInt();
                 b[i] = sc.nextInt();
             }
