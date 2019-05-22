@@ -4,6 +4,8 @@ import java.io.*;
 /**
  * Greeedy algorithm. Each time pick the valid node with lowest degree. Time
  * complexity: max(O(n^2), O(n*m)) m is the edge number.
+ *
+ * Problem: https://community.topcoder.com/stat?c=problem_statement&pm=15257&rd=17422
  */
 public class MaxCutFree {
 
