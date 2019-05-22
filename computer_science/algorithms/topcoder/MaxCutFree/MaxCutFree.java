@@ -2,33 +2,29 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Greeedy algorithm. Each time pick the valid node with lowest degree. Time
- * complexity: max(O(n^2), O(n*m)) m is the edge number.
+ * Fristly remove all bridges. Then apply a greeedy algorithm. Each time pick
+ * the valid node with lowest degree. Time complexity: max(O(n^2), O(n*m)) m is
+ * the edge number.
  *
- * Problem: https://community.topcoder.com/stat?c=problem_statement&pm=15257&rd=17422
+ * Problem:
+ * https://community.topcoder.com/stat?c=problem_statement&pm=15257&rd=17422
  */
 public class MaxCutFree {
 
     private int[] deg;
+    private int[] components;
     private boolean[] invalid;
-    private boolean[] bridge;
 
-    // O(n^2) to find strong connected component
-    private void findBridge(int n, int[] a, int[] b) {
-        for(int i = 0; i < a.length; i++) {
-            boolean [] visit = new boolean[n];
-            for(int j = 0; j < n; j++) visit[j] = false;
-            bridge[i] = isBridge(i, n, a, b, visit); 
-        }
+    private boolean isBridge(int a, int b) {
+        return components[a] == component[b];
     }
-    private boolean isBridge(int edgeIdx, int n, int[] a, int [] b, boolean [] visit) {
-    }
+
     private void deg(int n, int[] a, int[] b) {
         for (int i = 0; i < n; i++) {
             deg[i] = 0;
         }
         for (int i = 0; i < a.length; i++) {
-            if (invalid[a[i]] || invalid[b[i]]) {
+            if (isBridge(a[i], b[i]) || invalid[a[i]] || invalid[b[i]]) {
                 continue;
             }
             deg[a[i]]++;
@@ -47,6 +43,8 @@ public class MaxCutFree {
     }
 
     public int solve(int n, int[] a, int[] b) {
+        SCC scc = new SCC();
+        component = scc.scc(n, a, b);
         invalid = new boolean[n];
         deg = new int[n];
         for (int i = 0; i < n; i++) {
@@ -86,6 +84,92 @@ public class MaxCutFree {
             }
             int res = clazz.solve(n, a, b);
             System.out.println(res);
+        }
+    }
+
+    /**
+     * Find strong connected components
+     */
+    public class SCC {
+        private List<Integer>[] edges;
+        private List<Integer> order;
+        private int[] orderReverse;
+        private boolean[] visit;
+        private Set<Long> edgesVisit;
+        private int[] components;
+        private long HASH = 10000;
+
+        private long hash(int a, int b) {
+            return a * HASH + b;
+        }
+
+        private void visit(int node) {
+            order.add(node);
+            orderReverse[node] = order.size() - 1;
+            visit[node] = true;
+            for (int i = 0; i < edges[node].size(); i++) {
+                int next = edges[node].get(i);
+                if (!visit[next]) {
+                    edgesVisit.add(hash(next, node));
+                    edgesVisit.add(hash(node, next));
+                    visit(next);
+                }
+            }
+        }
+
+        private void bfs(int node) {
+            Queue<Integer> S = new LinkedList<Integer>();
+            for (int i = 0; i < edges[node].size(); i++) {
+                int next = edges[node].get(i);
+                if (edgesVisit.contains(hash(node, next)) || components[next] != -1)
+                    continue;
+                S.add(next);
+            }
+            while (!S.isEmpty()) {
+                int next = S.poll();
+                components[next] = components[node];
+                for (int i = 0; i < edges[next].size(); i++) {
+                    int nnext = edges[next].get(i);
+                    if (!edgesVisit.contains(hash(nnext, next)) || components[nnext] != -1
+                            || orderReverse[nnext] > orderReverse[next])
+                        continue;
+                    S.add(nnext);
+                }
+            }
+        }
+
+        public int[] scc(int n, int[] a, int[] b) {
+            // Initialize the edges
+            edges = new ArrayList[n];
+            edgesVisit = new HashSet<Long>();
+            order = new ArrayList<Integer>();
+            orderReverse = new int[n];
+            components = new int[n];
+            visit = new boolean[n];
+            for (int i = 0; i < n; i++) {
+                edges[i] = new ArrayList<Integer>();
+                visit[i] = false;
+                components[i] = -1;
+            }
+            for (int i = 0; i < a.length; i++) {
+                edges[a[i]].add(b[i]);
+                edges[b[i]].add(a[i]);
+            }
+
+            // bfs to built a pre-order traversal
+            for (int i = 0; i < n; i++) {
+                if (!visit[i])
+                    visit(i);
+            }
+
+            for (int i = 0; i < order.size(); i++) {
+                int node = order.get(i);
+                if (components[node] != -1)
+                    continue;
+                components[node] = node;
+                bfs(node);
+            }
+            return components;
         }
     }
 }
