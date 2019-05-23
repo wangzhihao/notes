@@ -15,7 +15,7 @@ import java.io.*;
  * http://akira.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/06/Hopcroft73.pdf
  *
  */
-public class MaxCutFree {
+public class MaxCutFree_SCC_Version {
 
     private int[] deg;
     private int[] components;
@@ -80,7 +80,7 @@ public class MaxCutFree {
     }
 
     public static void main(String[] args) throws Exception {
-        MaxCutFree clazz = new MaxCutFree();
+        MaxCutFree_SCC_Version clazz = new MaxCutFree_SCC_Version();
         Scanner sc = new Scanner(System.in);
         while (true) {
             int n = sc.nextInt();
