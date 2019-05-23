@@ -2,12 +2,27 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Fristly remove all bridges. Then apply a greeedy algorithm. Each time pick
- * the valid node with lowest degree. Time complexity: max(O(n^2), O(n*m)) m is
- * the edge number.
- *
- * Problem:
+ * Biconnected Components.
+ * Fristly remove all bridges. Then it is a maximum independent vertex set
+ * problem. See
+ * http://mathworld.wolfram.com/MaximumIndependentVertexSet.htmlapply a greeedy
+ * algorithm. Problem:
  * https://community.topcoder.com/stat?c=problem_statement&pm=15257&rd=17422
+ *
+ * Greedy algorithm should also work for trees: https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/IntractabilityIII-2x2.pdf
+ * https://en.wikipedia.org/wiki/Bridge_(graph_theory)
+ * https://en.wikipedia.org/wiki/Biconnected_component
+ * http://akira.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/06/Hopcroft73.pdf
+ *
+ * One counter example:
+    5 6
+    0 1
+    1 2
+    2 3
+    3 4
+    2 0
+    4 2
+    Should be 5 but be 3.
  */
 public class MaxCutFree {
 
@@ -24,7 +39,8 @@ public class MaxCutFree {
             deg[i] = 0;
         }
         for (int i = 0; i < a.length; i++) {
-            if(isBridge(a[i], b[i])) continue;
+            if (isBridge(a[i], b[i]))
+                continue;
             if (invalid[a[i]] || invalid[b[i]]) {
                 continue;
             }
@@ -36,7 +52,8 @@ public class MaxCutFree {
     private void visit(int node, int[] a, int[] b) {
         invalid[node] = true;
         for (int i = 0; i < a.length; i++) {
-            if(isBridge(a[i], b[i])) continue;
+            if (isBridge(a[i], b[i]))
+                continue;
             if (a[i] == node || b[i] == node) {
                 invalid[a[i]] = true;
                 invalid[b[i]] = true;
@@ -165,9 +182,8 @@ public class MaxCutFree {
 
             for (int i = 0; i < order.size(); i++) {
                 int node = order.get(i);
-                if (components[node] != -1)
-                    continue;
-                components[node] = node;
+                if (components[node] == -1)
+                    components[node] = node;
                 bfs(node);
             }
             return components;
