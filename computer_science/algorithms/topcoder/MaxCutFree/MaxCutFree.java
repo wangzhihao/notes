@@ -14,15 +14,6 @@ import java.io.*;
  * https://en.wikipedia.org/wiki/Biconnected_component
  * http://akira.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/06/Hopcroft73.pdf
  *
- * One counter example:
-    5 6
-    0 1
-    1 2
-    2 3
-    3 4
-    2 0
-    4 2
-    Should be 5 but be 3.
  */
 public class MaxCutFree {
 
@@ -184,6 +175,18 @@ public class MaxCutFree {
                 int node = order.get(i);
                 if (components[node] == -1)
                     components[node] = node;
+                /*
+                 We need bsf all nodes, here is a counter example if we only bsf those
+                 components[i] == -1 nodes, in which case the answer would be wrong, 3
+                 instead of 5.
+                    5 6
+                    0 1
+                    1 2
+                    2 0
+                    0 3
+                    3 4
+                    4 0
+                 */
                 bfs(node);
             }
             return components;
