@@ -5,3 +5,8 @@ Hopcroft and Tarjan present [a DFS based algorithm](http://akira.ruc.dk/~keld/te
 
 ## Implementation
 Here is an implementation of [biconnected components](https://community.topcoder.com/stat?c=problem_solution&cr=22858920&rd=17422&pm=15257). Here is [an implementation by myself](https://github.com/wangzhihao/notes/blob/stream-survey/computer_science/algorithms/topcoder/MaxCutFree/MaxCutFree_SCC_Version.java)
+
+## Difference with Strong Connected Components
+Biconnected components is the graph in which components won't increase if any one vertex is removed. Strong connected components is the graph in which every node is reachable to every other node. For example, the following graph is not biconnected, but it is strong conntected.
+
+![](./biconnected-example.png)
