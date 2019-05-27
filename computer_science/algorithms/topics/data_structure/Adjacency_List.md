@@ -13,7 +13,7 @@ List<integer> edges[];
 vector<int> edges[];
 ```
 
-Option 2: implement the linked list with array instead of pointers. This option is good for c porgram in which built-in list data structure is not available.
+Option 2: implement the linked list with array instead of pointers. This option is good for c porgram [in which built-in list data structure is not available](https://stackoverflow.com/a/14001669).
 ```c
 // c
 int count = vertex_count;
