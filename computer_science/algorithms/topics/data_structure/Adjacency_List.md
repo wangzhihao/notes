@@ -7,6 +7,8 @@ Option 1: via an array of List
 ```java
 // java
 List<integer> edges[];
+```
+```c++
 // c++
 vector<int> edges[];
 ```
