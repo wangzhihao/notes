@@ -20,6 +20,7 @@ int count = nodes_count;
 int [] next, val;
 
 add_edge(int u, int v) {
+    // assign a new buffer, implement list by our own.
 	count = count + 1;
 	next[count] = next[u];
 	next[u] = count;
