@@ -1,7 +1,7 @@
 ## Description
 https://en.wikipedia.org/wiki/Biconnected_component
 
-Hopcroft and Tarjan present [a DFS based algorithm](http://akira.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/06/Hopcroft73.pdf) to find biconnected component. However the paper didn't prove it. Here is [a proof by Reingold](https://www.cs.cmu.edu/~avrim/451f12/lectures/biconnected.pdf). The following animation shows the order that we discover each biconnected components separated by articulation points via this DFS algorithm. The reason why we use DFS/ function stack is to maintain an order so as to handle each biconnected components one by one.
+Hopcroft and Tarjan present [a DFS based algorithm](http://akira.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/06/Hopcroft73.pdf) to find biconnected component. However the paper didn't prove it. Here is [a proof by Reingold](https://www.cs.cmu.edu/~avrim/451f12/lectures/biconnected.pdf). The following animation shows the order that we discover each biconnected components separated by articulation points via this DFS algorithm. The reason why we use DFS/ function stack is to maintain an order so as to handle each biconnected components one by one, in other words, to handle a leaf node each time in the DFS tree.
 
 ![](./biconnect_dfs_illustration.png)
 
