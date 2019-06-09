@@ -14,5 +14,5 @@ Bridge https://community.topcoder.com/stat?c=problem_statement&pm=15458&rd=17514
 Then the problems turns to distribute 18 to 9 pieces, each pieces should be at least 1. Which is C(17, 8) = 24310, we can just enumerate this via permutation and then brut.
 
 ## [SelfDescFind](https://community.topcoder.com/stat?c=problem_statement&pm=15436&rd=17531)
-Since the prime numbers is sparse(about 8k in [10^4, 10^5]), we can brute force with two level for-loops and then verify the subtract number is also prime.
+Since the prime numbers is sparse(about 8k in [10^4, 10^5]), we can brute force with two level for-loops and then verify the remaining number is also prime.
 
