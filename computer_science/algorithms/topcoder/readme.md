@@ -17,10 +17,10 @@ Then the problems turns to distribute 18 to 9 pieces, each pieces should be at l
 Since the prime numbers is sparse(about 8k in [10^4, 10^5]), we can brute force with two level for-loops and then verify the remaining number is also prime.
 
 ## SRM 757 [CentipedeSocks](https://community.topcoder.com/stat?c=problem_statement&pm=15445&rd=17496)
-Some ideas of game theory is involved. Imagine we are the opposite player who want to makes X as large as possible. We can do this in a enumeration way. Suppose there are N sock buckets which one for a kind of socks. We are going to make each bucket no more than F sockets, since otherwise the other player can take them out as a valid pair. 
+Some ideas of game theory is involved. Imagine we are the opposite player who want to makes X as large as possible. We can do this in an enumeration way. Suppose there are N sock buckets, each one for a kind of socks.
 
-1. Each time, we find out some bucket to add more socks but not exceed F.
-2. When no such choice in step 1, we find a bucket with largest remaining socks and then add one sock and let the other player to take them out, clean the bucket and try again.
+1. Each turn, we find some bucket with less than F to add more socks.
+2. When step 1 cannot be done, we find a bucket with largest remaining socks and then add one sock and let the other player to take them out, clean the bucket and try again.
 3. When the player gets C turns, end with current used socks.
 4. When no more socks end with -1.
 
