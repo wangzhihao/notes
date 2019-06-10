@@ -20,7 +20,7 @@ Since the prime numbers is sparse(about 8k in [10^4, 10^5]), we can brute force 
 Some ideas of game theory is involved. Imagine we are the player who want to makes X as large as possible. We can do this in an enumeration way. Suppose there are N sock buckets, each one for a kind of socks.
 
 1. Each turn, we find some bucket with less than F to add more socks.
-2. When step 1 cannot be done, we find a bucket with largest remaining socks and then add one sock and let the other player to take them out, count the other player win 1 turn and go back to step 1.
+2. When step 1 cannot be done, we find a bucket with largest remaining socks, add one sock, alet the other player to take them out, count the other player win 1 turn and go back to step 1.
 3. When the other player wins C turns, end with the number of consumed socks.
 4. When no more socks end with -1.
 
