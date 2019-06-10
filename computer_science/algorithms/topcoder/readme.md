@@ -24,3 +24,5 @@ Some ideas of game theory is involved. Imagine we are the opposite player who wa
 3. When the player gets C turns, end with current used socks.
 4. When no more socks end with -1.
 
+The time complexity is O(N*C)
+
