@@ -1,8 +1,6 @@
 [The problem list](https://www.topcoder.com/tc?module=MatchList) without spoil it. 
 
-枚举 + 贪心 https://community.topcoder.com/stat?c=problem_statement&pm=15305
 Simple math https://community.topcoder.com/stat?c=problem_statement&pm=15292
-Bridge https://community.topcoder.com/stat?c=problem_statement&pm=15458&rd=17514　
 
 # DIV-1 250 
 ## SRM 759 [EllysThreePrimes](https://community.topcoder.com/stat?c=problem_statement&pm=15436&rd=17531)
@@ -25,6 +23,10 @@ Some ideas of game theory is involved. Imagine we are the player who want to mak
 4. When no more socks end with -1.
 
 The time complexity is `O(N*C)`
+
+## SRM 753 [MaxCutFree](https://community.topcoder.com/stat?c=problem_statement&pm=15257&rd=17422)
+
+Bridge, bi-connected component, minimum independent set.
 
 ## SRM 750 [IdenticalBags](https://community.topcoder.com/stat?c=problem_statement&pm=15305)
 
