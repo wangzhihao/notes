@@ -26,7 +26,7 @@ select instructions			0	0		242.6328125	295.7578125
 ```
 
 ## load elimination
-src/compiler/csa-load-elimination.cc
+[CR: Add very basic CsaLoadElimination phase](https://chromium-review.googlesource.com/c/v8/v8/+/1635449)
 
 ## Zone
 For BUG=[chromium:700364](https://bugs.chromium.org/p/chromium/issues/detail?id=700364)
