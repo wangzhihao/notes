@@ -24,5 +24,8 @@ Some ideas of game theory is involved. Imagine we are the player who want to mak
 3. When the other player wins C turns, end with the number of consumed socks.
 4. When no more socks end with -1.
 
-The time complexity is O(N*C)
+The time complexity is `O(N*C)`
 
+## SRM 750 [IdenticalBags](https://community.topcoder.com/stat?c=problem_statement&pm=15305)
+
+Simple greedy + binary search
