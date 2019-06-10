@@ -1,4 +1,6 @@
 ## Some optimizations
+http://wingolog.org/archives/2011/08/02/a-closer-look-at-crankshaft-v8s-optimizing-compiler
+
 ```
 					Nodes	Main Zone (KB)	Temp Zone (KB)	All Zones (KB)
 loop assignment analysis		0	0.8046875	0		1112.140625
