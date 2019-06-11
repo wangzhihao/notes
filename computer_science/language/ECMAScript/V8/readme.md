@@ -1,5 +1,4 @@
 ## Some optimizations
-http://wingolog.org/archives/2011/08/02/a-closer-look-at-crankshaft-v8s-optimizing-compiler
 
 ```
 					Nodes	Main Zone (KB)	Temp Zone (KB)	All Zones (KB)
@@ -40,3 +39,7 @@ The Zone object maintains [a linked list of FreeBlock in memory](https://github.
 
 src/zone/zone-splay-tree.h
 
+
+## Useful Links
+1. https://github.com/thlorenz/v8-perf
+2. http://wingolog.org/archives/2011/08/02/a-closer-look-at-crankshaft-v8s-optimizing-compiler
