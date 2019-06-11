@@ -28,6 +28,7 @@ select instructions			0	0		242.6328125	295.7578125
 
 ## load elimination
 * [CR: Add very basic CsaLoadElimination phase](https://chromium-review.googlesource.com/c/v8/v8/+/1635449)
+* [Taming architecture complexity in V8 — the CodeStubAssembler](https://v8.dev/blog/csa)
 * [phi instruction](https://stackoverflow.com/questions/11485531/what-exactly-phi-instruction-does-and-how-to-use-it-in-llvm)
 * [SSA](https://en.wikipedia.org/wiki/Static_single_assignment_form)
 
