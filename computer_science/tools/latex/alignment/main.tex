@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{csquotes}
+\usepackage{url}
+\usepackage{multicol}
+
+\title{How to align mappings in two columns?}
+\author{Zhihao Wang}
+\begin{document}
+\maketitle
+
+How to align these two columns and the mapping inside each column?
+
+\begin{multicols}{2}
+units $\rightarrow$ age(x days old)
+
+10 $\rightarrow$ 10
+
+30 $\rightarrow$ 15
+
+60 $\rightarrow$ 90
+
+\columnbreak
+
+inbound date $\rightarrow$ units
+
+2019-06-21 $\rightarrow$ 10
+
+2019-06-16 $\rightarrow$ 30
+
+2019-04-02 $\rightarrow$ 60
+\end{multicols}
+
+Here is one unsuccessful experiment. 
+\begin{multicols}{2}
+\begin{align*}
+    units & \rightarrow \text{age in days} \\ 
+     10 & \rightarrow 10 \\ 
+     30 & \rightarrow 15 \\ 
+     60 & \rightarrow 90 \\ 
+\end{align*}
+\columnbreak
+\begin{align*}
+    \text{inbound date} & \rightarrow units \\ 
+    \text{2019-06-21} & \rightarrow 10 \\ 
+    \text{2019-06-16} & \rightarrow 30 \\ 
+    \text{2019-04-02} & \rightarrow 60 \\ 
+\end{align*}
+\end{multicols}
+
+Here is another unsuccessful experiment. 
+\begin{equation*}
+\begin{aligned}
+    units & \rightarrow & \text{ age(x days old) }  & \text{inbound date} & \rightarrow & units \\
+    10 & \rightarrow & 10                           &  2019-06-21 & \rightarrow & 10   \\
+    30 & \rightarrow & 15                           &  2019-06-16 & \rightarrow & 30   \\
+    60 & \rightarrow & 90                           &  2019-04-02 & \rightarrow & 60   \\
+\end{aligned}
+\end{equation*}
+
+\end{document}
