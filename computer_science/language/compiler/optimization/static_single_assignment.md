@@ -1,3 +1,5 @@
+## Immutable
+
 Single static assignment can be viewed as an application of immutable. As illustrated in the following example.
 
 ```
@@ -7,3 +9,9 @@ B1 <- X1 + Y1
 ```
 
 Since we know the X1 and Y1 are immutable which can't be modified by the instructions between these two. We can tell A1 and B1 are equivalent very easily.
+
+## Paper : Global Value Numbers and Redundant Computations
+
+### Questions
+
+1. How to know in each iteration we improve the code?
