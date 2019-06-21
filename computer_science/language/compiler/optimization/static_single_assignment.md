@@ -19,4 +19,6 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 
 * How to transform back from SSA form? 
 
+![](../images/tranform-back-from-ssa.jpg)
+
 * How to know in each iteration we improve the code?
