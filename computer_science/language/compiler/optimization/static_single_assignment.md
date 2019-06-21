@@ -15,6 +15,6 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 ### Questions
 * How to transform to SSA form?
 
-* How to transform the SSA form back to the normal form? 
+* How to transform back from SSA form? 
 
 * How to know in each iteration we improve the code?
