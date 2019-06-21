@@ -23,5 +23,5 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 
 * How to know in each iteration we improve the code?
 
-Observation 1. The SSA form doesn't increase the instruction number if we didn't count Φ function. Only version number is assigned on the existing instructions.
-Observation 2. When tranforming back from the SSA form, both Φ function and version number will be removed. 
+    * Observation 1. The SSA form doesn't increase the instruction number if we didn't count Φ function. Only version number is assigned on the existing instructions.
+    * Observation 2. When tranforming back from the SSA form, both Φ function and version number will be removed. 
