@@ -21,6 +21,8 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 
 ![](../images/tranform-back-from-ssa.jpg)
 
+* What's the benefit of temporary value Zi? Why wouldn't the Zi makes performance worse?
+
 * How to know in each iteration we improve the code?
 
     * Observation 1. The SSA form doesn't increase the instruction number if we didn't count Φ function. Only version number is assigned to the existing instruction.
