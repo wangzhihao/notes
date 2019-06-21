@@ -22,3 +22,5 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 ![](../images/tranform-back-from-ssa.jpg)
 
 * How to know in each iteration we improve the code?
+
+Observation 1. The SSA form didn't increase the instruction number if we didn't count Φ function.
