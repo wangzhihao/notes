@@ -21,7 +21,7 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 
 ![](../images/tranform-back-from-ssa.jpg)
 
-* What's the benefit of temporary value Zi? Why wouldn't the Zi makes performance worse?
+* What's the benefit of temporary value Zi? Why wouldn't the Zi make performance worse?
 
 * How to know in each iteration we improve the code?
 
