@@ -14,4 +14,6 @@ Since we know the X1 and Y1 are immutable which can't be modified by the instruc
 
 ### Questions
 
-1. How to know in each iteration we improve the code?
+1. How to transform the SSA form back to the normal form? 
+
+2. How to know in each iteration we improve the code?
