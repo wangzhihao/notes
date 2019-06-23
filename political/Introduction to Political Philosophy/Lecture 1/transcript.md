@@ -1,6 +1,9 @@
 Introduction to Political Philosophy
+
 PLSC 114 - Lecture 1 - Introduction: What Is Political Philosophy?
+
 Chapter 1. What is Political Philosophy? [00:00:00]
+
 Professor Steven Smith: Let me start today by asking the question, “what is political philosophy?” Custom dictates that I say something about the subject matter of this course at its outset. This in some ways might seem a case of putting the cart before the horse, or the cart before the course maybe, because how can you say, how can we say what political philosophy is in advance of doing it? Anyway, let me try to say something that might be useful.
 
 In one sense, you could say political philosophy is simply a branch or what we call a subfield of the field of political science. Yes, all right. It exists alongside of other areas of political inquiry like American government, comparative politics, and international relations. Yet in another sense, political philosophy is something much different than simply a subfield; it seems to be the oldest and most fundamental part of political science. Its purpose is to lay bare, as it were, the fundamental problems, the fundamental concepts and categories which frame the study of politics. In this respect it seems to me much less like just a branch of political science than the foundation of the entire discipline.
