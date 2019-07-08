@@ -15,3 +15,11 @@
     3. 节奏弹对
 
 * Question 3: 练一练黑键的音阶或者大二度的哈农练习曲
+    弹F大调 和 D 和声小调, 只有一个黑键
+
+* Question 4: P51 页 哈农F大调练习曲，最后几个收尾的和旋为什么这么写？
+
+* Question 5: 练习单手新曲子 车尔尼 599之 55
+    右手的节奏(Dotted Eighth – Sixteenth Note Patterns)，有种像三拍的延长音的感觉
+
+* Question 6: 
