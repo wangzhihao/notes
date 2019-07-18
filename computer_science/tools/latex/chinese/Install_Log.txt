@@ -150,6 +150,6 @@ It's estimated to take about 25mins and consume 6.3GB disk space.
 
 The install succeeded.
 
-LANGUAGE=en_US LC_ALL=en_US.UTF-8 ./bin/x86_64-linux/lualatex
+LANGUAGE=en_US LC_ALL=en_US.UTF-8 ./bin/x86_64-linux/lualatex main.tex
 
 The compilation is successful: https://paste.amazon.com/show/zhihaow/1563481995
