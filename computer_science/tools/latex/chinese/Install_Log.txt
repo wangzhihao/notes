@@ -1,0 +1,155 @@
+Some notes on writing Chinese pdf.
+
+A test machine, remeber to close it after the test is done. It's in devo us-east-1.
+
+```
+ssh -i "zhihaow-2019-07-16.pem" ec2-user@ec2-18-205-185-224.compute-1.amazonaws.com
+```
+
+The first try is failed with the following error. https://tex.stackexchange.com/questions/17611/how-does-one-type-chinese-in-latex
+
+Source
+```
+\documentclass[UTF8]{ctexart}
+\begin{document}
+文章内容。
+\end{document}
+```
+
+Error
+```
+! LaTeX Error: File `ctexart.cls' not found.
+```
+
+Sounds like XeLaTeX is good option to go.
+
+Official site of XeLaTeX: https://tug.org/xetex/
+
+Looks like http://www.luatex.org/ is newer and better maintained.
+
+Looks like we can install tex live to get everything ready. https://www.tug.org/texlive/quickinstall.html
+
+Some errors:
+
+```
+[ec2-user@ip-10-0-0-211 install-tl-20190718]$ ./install-tl
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Can't locate Digest/MD5.pm in @INC (@INC contains: ./tlpkg /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at tlpkg/TeXLive/TLCrypto.pm line 9.
+BEGIN failed--compilation aborted at tlpkg/TeXLive/TLCrypto.pm line 9.
+Compilation failed in require at tlpkg/TeXLive/TLPOBJ.pm line 17.
+BEGIN failed--compilation aborted at tlpkg/TeXLive/TLPOBJ.pm line 17.
+Compilation failed in require at ./install-tl line 144.
+BEGIN failed--compilation aborted at ./install-tl line 144.
+```
+
+The perl package Digest::MD5 is not available. 
+
+Possible solution
+
+```
+cpan
+
+install Digest::MD5
+```
+
+https://stackoverflow.com/a/34249152
+
+But failed.
+
+
+A bunch of locale warnings.
+
+```
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+```
+This can be avoided by filling the environment variables LANGUAGLE and LC_ALL
+
+```
+LANGUAGE=en_US LC_ALL=en_US.UTF-8 ./install-tl
+```
+
+
+```
+LANGUAGE=en_US LC_ALL=en_US.UTF-8 cpan
+
+install Digest::MD5
+```
+
+Error 
+
+```
+cpan[1]> install Digest::MD5
+Reading '/home/ec2-user/.cpan/Metadata'
+  Database was generated on Thu, 18 Jul 2019 16:17:03 GMT
+Running install for module 'Digest::MD5'
+Running make for G/GA/GAAS/Digest-MD5-2.55.tar.gz
+Checksum for /home/ec2-user/.cpan/sources/authors/id/G/GA/GAAS/Digest-MD5-2.55.tar.gz ok
+Scanning cache /home/ec2-user/.cpan/build for sizes
+............................................................................DONE
+
+  CPAN.pm: Building G/GA/GAAS/Digest-MD5-2.55.tar.gz
+
+Perl's config says that U32 access must be aligned.
+Checking if your kit is complete...
+Looks good
+Writing Makefile for Digest::MD5
+Could not read metadata file. Falling back to other methods to determine prerequisites
+cp MD5.pm blib/lib/Digest/MD5.pm
+/usr/bin/perl /usr/share/perl5/vendor_perl/ExtUtils/xsubpp  -typemap /usr/share/perl5/ExtUtils/typemap -typemap typemap  MD5.xs > MD5.xsc && mv MD5.xsc MD5.c
+gcc -c   -D_REENTRANT -D_GNU_SOURCE -fwrapv -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -DVERSION=\"2.55\" -DXS_VERSION=\"2.55\" -fPIC "-I/usr/lib64/perl5/CORE"  -DU32_ALIGNMENT_REQUIRED MD5.c
+/bin/sh: gcc: command not found
+make: *** [MD5.o] Error 127
+  GAAS/Digest-MD5-2.55.tar.gz
+  /usr/bin/make -- NOT OK
+'YAML' not installed, will not store persistent state
+Running make test
+  Can't test without successful make
+Running make install
+  Make had returned bad status, install seems impossible
+Failed during this command:
+ GAAS/Digest-MD5-2.55.tar.gz                  : make NO
+
+```
+
+It complains no gcc.
+
+
+sudo yum install gcc
+Package gcc-7.3.1-5.amzn2.0.2.x86_64 installed and latest version
+
+Error log: https://paste.amazon.com/show/zhihaow/1563473717
+Can't locate Test/More.pm
+
+install Test::More via cpan works
+
+Now install the package Digest::MD5 works.
+
+```
+!! default location: /usr/local/texlive/2019
+ !! is not writable or not allowed, please select a different one!
+```
+How to select the directory: https://tex.stackexchange.com/questions/296081/how-to-select-the-directories-such-that-tex-live-is-installed-in-my-home
+
+The installation starts!
+
+It's estimated to take about 25mins and consume 6.3GB disk space.
+
+The install succeeded.
+
+LANGUAGE=en_US LC_ALL=en_US.UTF-8 ./bin/x86_64-linux/lualatex
+
+The compilation is successful: https://paste.amazon.com/show/zhihaow/1563481995
