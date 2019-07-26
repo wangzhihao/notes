@@ -13,10 +13,4 @@ https://www.goethe.de/de/spr/ueb/tnb.html
 * https://www.amazon.com/Learn-German-Stories-Berlin-Beginners-ebook/dp/B00F33E3C0
 
 ## Wörterbuch 
-* https://www.reddit.com/r/German/comments/6acqgm/what_germangerman_dictionary_is_best_to_get/
-* https://www.duden.de
-* [Deutsches Wörterbuch](http://woerterbuchnetz.de/DWB/)
-
-## Etymologie
-
-* https://german.stackexchange.com/questions/3/is-there-a-good-online-resource-to-look-up-the-etymology-of-german-words
+* [Deutsches Wörterbuch](http://woerterbuchnetz.de/DWB/), it covers etymology,  see [others](https://german.stackexchange.com/questions/3/is-there-a-good-online-resource-to-look-up-the-etymology-of-german-words)
