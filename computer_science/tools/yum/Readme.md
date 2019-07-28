@@ -1,3 +1,7 @@
+## Cheetsheet
+
+Yum command cheat sheet for Red Hat Enterprise Linux: [link](https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf)
+
 ## Show pacakge version
 
 You can find the version number of a package in your repositories with the `yum info` command. [link](https://serverfault.com/a/385234/176713)
@@ -15,3 +19,7 @@ texlive-2:2012-38.20130427_r30134.24.amzn1.x86_64 [cmd line]
  \_  texlive-scheme-basic-2:svn25923.0-38.20130427_r30134.24.amzn1.noarch [1: texlive-scheme-basic]
  \_  texlive-tetex-2:svn29585.3.0-38.24.amzn1.noarch [1: tex-tetex]
 ```
+
+## Remove
+
+`yum autoremove` is better than `yum remove` 
