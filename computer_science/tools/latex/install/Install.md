@@ -4,7 +4,7 @@ It's very probably that `texlive` bundle available to your linux packages manage
 
 ## Check the version
 
-The first step we need to check the version of texlive. It might be pretty old in some linux systems. For example, 2012 version doesn't contains [ctex](http://www.ctex.org/) package for Chinese. 
+The first step we need to check the version of texlive. It might be pretty old in some linux systems. For example, 2012 version doesn't contain [ctex](http://www.ctex.org/) package for Chinese.
 
 ```
 In AWS EC2 m5a.large
@@ -37,7 +37,11 @@ If you are good with the version, you can simply install with
 yum install texlive
 ```
 
-## To install LaTeX custom package
+## Build from Source
+
+Here is [the script](placeholder) that you can build from the source.
+
+## Custom package
 
 1. Download LaTeX package from [CTAN](https://ctan.org/)
 2. Unzip the package and there should be `*.ins` inside it
