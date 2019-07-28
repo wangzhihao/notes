@@ -2,7 +2,7 @@
 
 You can find the version number of a package in your repositories with the `yum info` command. [link](https://serverfault.com/a/385234/176713)
 
-## Show the dependency
+## Show dependency
 
 For simple dependency questions we can use `yum deplist`, For complex dependency questions we can use `repoquery`. For example.
 
