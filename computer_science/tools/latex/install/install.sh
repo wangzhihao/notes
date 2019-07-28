@@ -10,6 +10,10 @@ function main() {
 
         cd install-tl-20190728
         TEXLIVE_INSTALL_PREFIX=~/tex-installation ./install-tl
+
+        # You might want to add the tex commands to PATH 
+        # export PATH=~/tex-installation/2019/bin/x86_64-linux/:$PATH
+
 }
 
 main
