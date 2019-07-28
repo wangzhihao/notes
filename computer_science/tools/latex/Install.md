@@ -4,7 +4,8 @@ It's very probably that `texlive` bundle available to your linux packages manage
 
 ## Check the version
 
-The first step we need to check the version of texlive. It might be pretty old in some linux systems.
+The first step we need to check the version of texlive. It might be pretty old in some linux systems. For example, 2012 version doesn't contains [ctex](http://www.ctex.org/) package for Chinese. 
+
 ```
 In AWS EC2 m5a.large
 [ec2-user@ip-10-0-3-149 ~]$ yum info texlive
