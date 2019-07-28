@@ -4,7 +4,7 @@ It's very probably that `texlive` bundle available to your linux packages manage
 
 ## Check the version
 
-The first step we need to check the version of texlive. It might be pretty old in some linux systems. For example, the 2012 version doesn't include XeTeX.
+The first step we need to check the version of texlive. It might be pretty old in some linux systems.
 ```
 In AWS EC2 m5a.large
 [ec2-user@ip-10-0-3-149 ~]$ yum info texlive
