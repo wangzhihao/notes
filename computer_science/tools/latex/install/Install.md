@@ -39,7 +39,7 @@ yum install texlive
 
 ## Build from Source
 
-Here is [the script](placeholder) that you can build from the source.
+Here is [the script](./install.sh) that you can build from the source.
 
 ## Custom package
 
