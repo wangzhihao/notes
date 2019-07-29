@@ -1,0 +1,144 @@
+% Common configuration
+\usepackage[american]{babel} % Language rules
+\usepackage{geometry} % For page/section sizing
+\usepackage{graphicx} % Better import of graphics figures
+\usepackage{tabularx} % For better table text handling
+\usepackage{multicol} % For table column spanning
+\usepackage{csquotes} % For blockquote
+\usepackage{nameref}  % To insert the name of a reference, not number
+
+% Setup more modern, cleaner, font choices
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\setromanfont[Numbers=OldStyle,Mapping=tex-text]{Linux Libertine O}
+\setsansfont[Mapping=tex-text]{Linux Biolinum O}
+\setmonofont[Scale=.9]{Courier New}
+\newfontfamily{\lstsansserif}[Scale=.75]{Courier New}
+\newcommand{\ampalt}{\char"E050\,} % AMPERSAND.ALT within sans font above
+
+% Setup nicer figure captions
+\usepackage{ccaption}
+\captionnamefont{\bfseries\footnotesize}
+\captiontitlefont{\footnotesize}
+
+% Setup nicer headings
+\usepackage[automark,footsepline,headsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\lefoot{Amazon Confidential}
+\rofoot{Amazon Confidential}
+\cfoot[\pagemark]{\pagemark}
+\lehead{\headmark}
+\rohead{\headmark}
+\pagestyle{scrheadings}
+
+% Setup a different definition list
+\usepackage{enumitem} % Allows customization of enumeration environments
+\newenvironment{widedescription}
+	{\begin{description}[style=multiline,leftmargin=4cm]}
+	{\end{description}}
+
+% Math stuff
+\usepackage{amsmath} % Nice math support
+\usepackage{amsthm}  % Nice theorem support
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+
+% Listing stuff
+\usepackage{scrhack}  % remove KOMA warning about \float@addtolists
+\usepackage{listings} % For basic listing capabilities
+\usepackage{color}    % Color names, referred to below
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple},
+	stringstyle=\color{red},
+	morestring=[b]',
+	morestring=[b]"
+}
+\lstdefinelanguage{JsonHttp}{
+	keywords={true, false, undefined, null},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={GET, POST, PUT, DELETE, OK, Date, Content, Type, Length, ETag, Last, Modified, If, Match, None},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=true,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple},
+	stringstyle=\color{red},
+	morestring=[b]',
+	morestring=[b]"
+}
+\lstdefinestyle{RQL}
+{
+    language=SQL,
+    morekeywords={WHICH,CONTAIN,ARE_WITHIN,LOCATION,SHAPE}
+}
+\lstnewenvironment{rql}
+{\lstset{style=RQL}}
+{}
+\lstset{basicstyle=\lstsansserif,captionpos=b,showstringspaces=false}
+
+% Pseudo code
+\usepackage[ruled,vlined]{algorithm2e} % For the algorithm environment
+
+% Can't find an easier way to do this...
+\usepackage{dirtree}
+
+% Annotations (remove?)
+\usepackage{soul} % For \hl highlighting
+\usepackage[prependcaption,textsize=tiny]{todonotes} % for \todo notes
+
+% Chapter status header block
+\usepackage{framed}
+\newenvironment{status}%
+	{\begin{framed}
+		\noindent\textbf{STATUS}:}
+	{\end{framed}}
+
+% Custom commands and environments
+\newenvironment{acknowledgements}%
+	{\cleardoublepage\thispagestyle{empty}\null\vfill
+		\begin{center}%
+			\bfseries Acknowledgements
+		\end{center}}%
+	{\vfill\null}
+	
+\newcommand{\iacrshort}[1]{\index{#1}\acrshort{#1}}
+\newcommand{\iacrlong}[1]{\index{#1}\acrlong{#1}}
+\newcommand{\iacrfull}[1]{\index{#1}\acrfull{#1}}
+
+\newcommand*{\acrlike}[1]{\textsc{\lowercase{#1}}}
+\newcommand*{\iacrlike}[1]{\index{#1}\acrlike{#1}}
+	
+\newcommand{\indexas}[1]{\index{#1}#1}
+\newcommand{\indexaslc}[1]{\index{#1}\lowercase{#1}}
+
+% --------- --------- --------- --------- --------- ---------
+
+% Generates the glossary
+\usepackage[acronym,toc]{glossaries}
+\setacronymstyle{long-sc-short}
+\loadglsentries{tex/glossary}
+\makeglossaries
+\include{tex/acronyms}
+
+% Generates the index
+\usepackage{makeidx}
+\makeindex
+
+% Document properties
+\title{Region-Awareness for Amazon}
+\subtitle{\acrlong{WRAP}}
+\author{Simon Johnston (simonjo@amazon.com)}
