@@ -9,3 +9,5 @@ gradle init
 gradle build
 
 gradle run
+
+// a sample code: https://paste.amazon.com/show/zhihaow/1565383756
