@@ -7,3 +7,10 @@
 * https://www.amazon.com/Hammers-German-Grammar-Martin-Durrell/dp/1444120166
 * https://www.amazon.com/Learn-German-Stories-Berlin-Beginners-ebook/dp/B00F33E3C0
 
+## Audio
+* https://www.thegermanproject.com
+* https://www.thefablecottage.com/
+* https://librivox.org
+
+## App
+* https://www.duolingo.com
