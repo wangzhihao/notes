@@ -21,5 +21,7 @@ ssserver -p 8443 -k confidence -m rc4-md5 -vv
 /usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k confidence -m rc4-md5 -vv
 
 # Test with Curl
-curl -x socks5h://18.136.102.7:8443 http://www.google.com/
+curl -x socks5h://127.0.0.1:1080 http://www.google.com/
 ```
+
+Please ensure 8443 port to be accessible in AWS Security Group.

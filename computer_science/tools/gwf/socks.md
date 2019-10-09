@@ -10,4 +10,4 @@ sudo python -m SimpleHTTPServer 80 > /dev/null 2>&1 &
 curl -x socks5h://18.136.102.7:8081 http://www.google.com/
 ```
 
-Please note 8081 port should be accessible in AWS Security Group.
+Please ensure 8081 port to be accessible in AWS Security Group.
