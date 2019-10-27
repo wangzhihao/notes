@@ -17,6 +17,9 @@ ssh -o TCPKeepAlive=no -o ServerAliveInterval=15 -i ~/zhihaow-ec2.pem ec2-user@e
 # Setup shadowsocks server
 ssserver -p 8443 -k dummy -m rc4-md5 -vv
 
+# Or setup it in background
+sudo ssserver -p 8443 -k dummy -m rc4-md5 --user nobody -d start
+
 # Setup shadowsocks local
 /usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k dummy -m rc4-md5 -vv
 
