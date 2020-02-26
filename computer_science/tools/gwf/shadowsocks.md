@@ -12,10 +12,10 @@ Here are steps to debug shadowsocks.
 ssh -o TCPKeepAlive=no -o ServerAliveInterval=15 -i ~/zhihaow-ec2.pem ec2-user@ec2-18-140-66-54.ap-southeast-1.compute.amazonaws.com
 
 # Setup shadowsocks server
-ssserver -p 8443 -k dummy -m rc4-md5 -vv
+ssserver -p 8443 -k dummy -m aes-256-cfb -vv
 
 # Or setup it in background
-sudo ssserver -p 8443 -k dummy -m rc4-md5 --user nobody -d start
+sudo ssserver -p 8443 -k dummy -m aes-256-cfb --user nobody -d start
 
 # Install the shadowsocks from brand new.
 sudo yum install python-pip
@@ -23,7 +23,7 @@ sudo yum install git
 sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
 # Setup shadowsocks local
-/usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k dummy -m rc4-md5 -vv
+/usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k dummy -m aes-256-cfb -vv
 
 # Test with Curl
 curl -x socks5h://127.0.0.1:1080 http://www.google.com/
@@ -34,7 +34,7 @@ Please ensure 8443 port to be accessible in AWS Security Group.
 Here is the debug log
 
 ```txt
-/usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k dummy -m rc4-md5 -vv
+/usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k dummy -m aes-256-cfb -vv
 
 2019-10-10 09:54:34 INFO     loading libcrypto from /usr/lib/libcrypto.dylib
 2019-10-10 09:54:34 INFO     starting local at 127.0.0.1:1080
@@ -62,7 +62,7 @@ Here is the debug log
 2019-10-10 09:54:44 DEBUG    destroying local
 2019-10-10 09:54:54 VERBOSE  sweeping timeouts
 
-ssserver -p 8443 -k dummy -m rc4-md5 -vv
+ssserver -p 8443 -k dummy -m aes-256-cfb -vv
 2019-10-10 01:54:20 INFO     loading libcrypto from libcrypto.so.10
 2019-10-10 01:54:20 INFO     starting server at 0.0.0.0:8444
 2019-10-10 01:54:20 DEBUG    using event model: epoll
