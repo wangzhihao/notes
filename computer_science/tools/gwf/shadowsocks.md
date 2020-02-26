@@ -1,24 +1,26 @@
-One shadowsocks instance is setup on my aws account(accept.acm@gmail.com) in singapore region. The endpoint is:
+## Shadowsocks Debug
 
-```
-ec2-52-77-239-113.ap-southeast-1.compute.amazonaws.com
-```
+One shadowsocks instance is setup on my aws account(accept.acm@gmail.com) in singapore region.
 
 The Pem is put here: https://drive.google.com/file/d/1_zfNMAFvULLziZLqXlAv8DkwLP36mg3b/view?usp=drive_open
-
-## Shadowsocks Debug
 
 Here are steps to debug shadowsocks.
 
 ```sh
+
 # Login remote server
-ssh -o TCPKeepAlive=no -o ServerAliveInterval=15 -i ~/zhihaow-ec2.pem ec2-user@ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com
+ssh -o TCPKeepAlive=no -o ServerAliveInterval=15 -i ~/zhihaow-ec2.pem ec2-user@ec2-18-140-66-54.ap-southeast-1.compute.amazonaws.com
 
 # Setup shadowsocks server
 ssserver -p 8443 -k dummy -m rc4-md5 -vv
 
 # Or setup it in background
 sudo ssserver -p 8443 -k dummy -m rc4-md5 --user nobody -d start
+
+# Install the shadowsocks from brand new.
+sudo yum install python-pip
+sudo yum install git
+sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
 # Setup shadowsocks local
 /usr/local/bin/sslocal -s ec2-18-136-102-7.ap-southeast-1.compute.amazonaws.com -p 8443 -k dummy -m rc4-md5 -vv
