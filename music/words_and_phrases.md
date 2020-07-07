@@ -5,5 +5,6 @@ Like language, music has its words and phrases. To recognize common words and ph
 
 ## Genre
 
+* minuet: https://www.gramophone.co.uk/features/article/what-is-a-minuet
 * polonaise: https://www.pianotv.net/2016/09/polonaise-history-sound-style/
 
