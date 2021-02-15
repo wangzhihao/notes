@@ -5,8 +5,8 @@
 * Codd, Edgar F. "A relational model of data for large shared data banks." Communications of the ACM 13.6 (1970): 377-387.
 
 ### Reading
-* Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
-* Ghuloum, Abdulaziz. "An incremental approach to compiler construction." Proceedings of the 2006 Scheme and Functional Programming Workshop, Portland, OR. Citeseer. 2006. [paper](https://github.com/namin/inc/blob/master/docs/paper.pdf) / [tutorial](https://github.com/namin/inc/blob/master/docs/tutorial.pdf) / [step by step implementation](https://github.com/namin/inc) by [Nada Amin](https://www.cl.cam.ac.uk/~na482/cv/)/ [implemenation: ikarus scheme](http://ikarus-scheme.org)
+* [A Parallel Hash Join Algorithm for Managing Data Skew](https://ieeexplore.ieee.org/document/250117)
+* [SquirrelJoin: Network-Aware Distributed Join Processing with Lazy Partitioning](https://lsds.doc.ic.ac.uk/sites/default/files/p1292-rupprecht.pdf)
 
 ### Have Read
 * Bayer, Rudolf, and Edward McCreight. "Organization and maintenance of large ordered indexes." Software pioneers. Springer, Berlin, Heidelberg, 2002. 245-262.
@@ -16,7 +16,39 @@
 * Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.
 * Novikoff, Albert B. On convergence proofs for perceptrons. STANFORD RESEARCH INST MENLO PARK CA, 1963.
 * K. M. Chandy and L. Lamport, “Distributed snapshots: determining global states of distributed systems,” ACM Transactions on Computer Systems (TOCS), vol. 3, no. 1, pp. 63–75, 1985.
+* [Starling: A Scalable Query Engine on Cloud Function Services](https://arxiv.org/abs/1911.11727)
+* [Serverless Computing: One Step Forward, Two Steps Back](https://arxiv.org/pdf/1812.03651.pdf)
+* [Megaphone: Latency-conscious state migration for distributed streaming dataflows](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/387642/p1002-hoffmann.pdf?sequence=3&isAllowed=y)
+* [Rhino: Efficient Management of Very Large Distributed State for Stream Processing Engines](https://dl.acm.org/doi/10.1145/3318464.3389723)
+* DPI: The Data Processing Interface for Modern Networks
+* Veritas: Shared Verifiable Databases and Tables in the Cloud
+* [Bitcoin: A Peer-to-Peer Electronic Cash System](https://github.com/decrypto-org/blockchain-papers)
+* [Providing Streaming Joins As a Service at Facebook](http://www.vldb.org/pvldb/vol11/p1809-jacques-silva.pdf)
 
+### Buffer
+* SIGMOD 
+    * https://sigmod2020.org/sigmod_research_list.shtml
+    * Papers: https://sigmod2020.org/sigmod_research_list.shtml
+    * Search list: https://scholar.google.com/scholar?start=0&q=source:%222020+ACM+SIGMOD%22&hl=en&as_sdt=0,38
+    * Interest:
+        * [Analysis of Indexing Structures for Immutable Data](https://arxiv.org/abs/2003.02090)
+        * [Causality-Guided Adaptive Interventional Debugging](https://arxiv.org/abs/2003.09539)
+        * [ALEX: An Updatable Adaptive Learned Index](https://arxiv.org/abs/1905.08898)
+        * [Rethinking Logging, Checkpoints, and Recovery for High-Performance Storage Engines](https://db.in.tum.de/~leis/papers/rethinkingLogging.pdf)
+        * [Grizzly: Efficient Stream Processing Through Adaptive Query Compilation](https://dl.acm.org/doi/10.1145/3318464.3389739)
+        * [Lambada: Interactive Data Analytics on Cold Data using Serverless Cloud Infrastructure](https://arxiv.org/abs/1912.00937)
+        * [Elastic Machine Learning Algorithms in Amazon SageMaker](https://ssc.io/pdf/modin711s.pdf)
+
+* VLDB
+* CIDR
+    * http://cidrdb.org/cidr2019/program.html
+
+* USENIX
+    * https://www.usenix.org/conference/nsdi20/accepted-papers
+
+* MISC
+    * Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
+    * Ghuloum, Abdulaziz. "An incremental approach to compiler construction." Proceedings of the 2006 Scheme and Functional Programming Workshop, Portland, OR. Citeseer. 2006. [paper](https://github.com/namin/inc/blob/master/docs/paper.pdf) / [tutorial](https://github.com/namin/inc/blob/master/docs/tutorial.pdf) / [step by step implementation](https://github.com/namin/inc) by [Nada Amin](https://www.cl.cam.ac.uk/~na482/cv/)/ [implemenation: ikarus scheme](http://ikarus-scheme.org)
 
 # Books
 
