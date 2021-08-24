@@ -10,6 +10,7 @@
 * [SquirrelJoin: Network-Aware Distributed Join Processing with Lazy Partitioning](https://lsds.doc.ic.ac.uk/sites/default/files/p1292-rupprecht.pdf)
 
 ### Have Read
+* Moritz, Philipp, et al. "Ray: A distributed framework for emerging {AI} applications." 13th {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI} 18). 2018.
 * Bayer, Rudolf, and Edward McCreight. "Organization and maintenance of large ordered indexes." Software pioneers. Springer, Berlin, Heidelberg, 2002. 245-262.
 * Lewin, Daniel Mark. Consistent hashing and random trees: Algorithms for caching in distributed networks. Diss. Massachusetts Institute of Technology, 1998. [link](https://drive.google.com/file/d/1dKyVY_jy8f3LWle3toHTSEST5It5Gphq/view?usp=sharing)
 * Stoica, Ion, et al. "Chord: a scalable peer-to-peer lookup protocol for internet applications." IEEE/ACM Transactions on Networking (TON) 11.1 (2003): 17-32.
