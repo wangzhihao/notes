@@ -4,6 +4,7 @@
 * Rabiner, Lawrence R. "A tutorial on hidden Markov models and selected applications in speech recognition." Proceedings of the IEEE 77.2 (1989): 257-286.
 * Codd, Edgar F. "A relational model of data for large shared data banks." Communications of the ACM 13.6 (1970): 377-387.
 * [Spanner, TrueTime & The CAP Theorem](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45855.pdf)
+* Begoli, Edmon, et al. "One SQL to rule them all-an efficient and syntactically idiomatic approach to management of streams and tables." Proceedings of the 2019 International Conference on Management of Data. 2019.
 
 ### Reading
 * [A Parallel Hash Join Algorithm for Managing Data Skew](https://ieeexplore.ieee.org/document/250117)
