@@ -50,7 +50,7 @@
     * https://www.usenix.org/conference/nsdi20/accepted-papers
 
 * MISC
-    * Graefe, Goetz, Ross Bunker, and Shaun Cooper. "Hash joins and hash teams in Microsoft SQL Server." VLDB. Vol. 98. 1998.
+    * Graefe, Goetz, Ross Bunker, and Shaun Cooper. "Hash joins and hash teams in Microsoft SQL Server." VLDB. Vol. 98. 1998. Used by [Flink](https://github.com/apache/flink/blob/c6f943ec29608ef3ce66d9b41968fd1136915e13/flink-runtime/src/main/java/org/apache/flink/runtime/operators/hash/MutableHashTable.java)
     * Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
     * Ghuloum, Abdulaziz. "An incremental approach to compiler construction." Proceedings of the 2006 Scheme and Functional Programming Workshop, Portland, OR. Citeseer. 2006. [paper](https://github.com/namin/inc/blob/master/docs/paper.pdf) / [tutorial](https://github.com/namin/inc/blob/master/docs/tutorial.pdf) / [step by step implementation](https://github.com/namin/inc) by [Nada Amin](https://www.cl.cam.ac.uk/~na482/cv/)/ [implemenation: ikarus scheme](http://ikarus-scheme.org)
 
