@@ -1,16 +1,14 @@
 # Papers
 
 ### To Read
-* Rabiner, Lawrence R. "A tutorial on hidden Markov models and selected applications in speech recognition." Proceedings of the IEEE 77.2 (1989): 257-286.
-* Codd, Edgar F. "A relational model of data for large shared data banks." Communications of the ACM 13.6 (1970): 377-387.
-* [Spanner, TrueTime & The CAP Theorem](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45855.pdf)
-* Begoli, Edmon, et al. "One SQL to rule them all-an efficient and syntactically idiomatic approach to management of streams and tables." Proceedings of the 2019 International Conference on Management of Data. 2019.
+
 
 ### Reading
 * [A Parallel Hash Join Algorithm for Managing Data Skew](https://ieeexplore.ieee.org/document/250117)
 * [SquirrelJoin: Network-Aware Distributed Join Processing with Lazy Partitioning](https://lsds.doc.ic.ac.uk/sites/default/files/p1292-rupprecht.pdf)
 
 ### Have Read
+* Begoli, Edmon, et al. "One SQL to rule them all-an efficient and syntactically idiomatic approach to management of streams and tables." Proceedings of the 2019 International Conference on Management of Data. 2019.
 * Moritz, Philipp, et al. "Ray: A distributed framework for emerging {AI} applications." 13th {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI} 18). 2018.
 * Bayer, Rudolf, and Edward McCreight. "Organization and maintenance of large ordered indexes." Software pioneers. Springer, Berlin, Heidelberg, 2002. 245-262.
 * Lewin, Daniel Mark. Consistent hashing and random trees: Algorithms for caching in distributed networks. Diss. Massachusetts Institute of Technology, 1998. [link](https://drive.google.com/file/d/1dKyVY_jy8f3LWle3toHTSEST5It5Gphq/view?usp=sharing)
@@ -53,6 +51,10 @@
     * Graefe, Goetz, Ross Bunker, and Shaun Cooper. "Hash joins and hash teams in Microsoft SQL Server." VLDB. Vol. 98. 1998. Used by [Flink](https://github.com/apache/flink/blob/c6f943ec29608ef3ce66d9b41968fd1136915e13/flink-runtime/src/main/java/org/apache/flink/runtime/operators/hash/MutableHashTable.java)
     * Hu, Yifan. "Efficient, high-quality force-directed graph drawing." Mathematica Journal 10.1 (2005): 37-71.
     * Ghuloum, Abdulaziz. "An incremental approach to compiler construction." Proceedings of the 2006 Scheme and Functional Programming Workshop, Portland, OR. Citeseer. 2006. [paper](https://github.com/namin/inc/blob/master/docs/paper.pdf) / [tutorial](https://github.com/namin/inc/blob/master/docs/tutorial.pdf) / [step by step implementation](https://github.com/namin/inc) by [Nada Amin](https://www.cl.cam.ac.uk/~na482/cv/)/ [implemenation: ikarus scheme](http://ikarus-scheme.org)
+   * Rabiner, Lawrence R. "A tutorial on hidden Markov models and selected applications in speech recognition." Proceedings of the IEEE 77.2 (1989): 257-286.
+   * Codd, Edgar F. "A relational model of data for large shared data banks." Communications of the ACM 13.6 (1970): 377-387.
+   * [Spanner, TrueTime & The CAP Theorem](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45855.pdf)
+
 
 # Books
 
