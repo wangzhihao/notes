@@ -4,6 +4,7 @@
 Farhat, Omar, Khuzaima Daudjee, and Leonardo Querzoni. "Klink: Progress-Aware Scheduling for Streaming Data Systems." Proceedings of the 2021 International Conference on Management of Data. 2021.
 
 ### Have Read
+* Carbone, Paris. Scalable and Reliable Data Stream Processing. Diss. KTH Royal Institute of Technology, 2018.
 * Begoli, Edmon, et al. "One SQL to rule them all-an efficient and syntactically idiomatic approach to management of streams and tables." Proceedings of the 2019 International Conference on Management of Data. 2019.
 * Moritz, Philipp, et al. "Ray: A distributed framework for emerging {AI} applications." 13th {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI} 18). 2018.
 * Bayer, Rudolf, and Edward McCreight. "Organization and maintenance of large ordered indexes." Software pioneers. Springer, Berlin, Heidelberg, 2002. 245-262.
