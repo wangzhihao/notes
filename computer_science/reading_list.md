@@ -28,6 +28,7 @@
 
 ### Buffer
 * SIGMOD 
+    * https://2021.sigmod.org/sigmod_research_list.shtml 
     * https://sigmod2020.org/sigmod_research_list.shtml
     * Papers: https://sigmod2020.org/sigmod_research_list.shtml
     * Search list: https://scholar.google.com/scholar?start=0&q=source:%222020+ACM+SIGMOD%22&hl=en&as_sdt=0,38
